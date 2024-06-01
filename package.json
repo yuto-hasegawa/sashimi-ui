@@ -1,6 +1,6 @@
 {
 	"name": "sashimi-ui",
-	"version": "0.0.11",
+	"version": "0.0.1",
 	"description": "UI library which brings out the best of the ingredients(HTML)",
 	"type": "module",
 	"scripts": {
