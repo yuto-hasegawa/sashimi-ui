@@ -1,0 +1,122 @@
+---
+title: Hello, World
+layout: ../../components/Layout.astro
+---
+
+import SamplePane from "../../components/SamplePane.astro";
+import "./button.css";
+
+# Button
+
+`.button` makes elements look like a button.
+
+## Applicable Elements
+
+- `button`
+- `a`
+
+## Basic Usage
+
+<SamplePane>
+  <button class="button">Plain Button</button>
+  <a class="button" href="https://github.com" target="_blank">Open github.com</a>
+</SamplePane>
+```html
+<button class="button">Plain Button</button>
+<a class="button" href="https://github.com" target="_blank">Open github.com</a>
+```
+
+## Variants
+
+Buttons have variants based on their roles.
+
+<SamplePane>
+  <button class="button">Primary</button>
+  <button class="button secondary">Secondary</button>
+  <button class="button tertiary">Tertiary</button>
+  <button class="button shy">Shy</button>
+</SamplePane>
+```html
+<button class="button">Primary</button>
+<button class="button secondary">Secondary</button>
+<button class="button tertiary">Tertiary</button>
+<button class="button shy">Shy</button>
+```
+
+## Combination
+
+`.icon` suits well with `.button`.
+
+<SamplePane>
+  <button class="button"><img class="icon" src="/home.svg" />Home</button>
+  <button class="button secondary">Edit<img class="icon" src="/edit.svg" /></button>
+  <button class="button tertiary"><img class="icon" src="/copy.svg" alt="Copy" /></button>
+</SamplePane>
+```html
+<button class="button">
+  <img class="icon" src="/home.svg" />
+  Home
+</button>
+<button class="button secondary">
+  Edit
+  <img class="icon" src="/edit.svg" />
+</button>
+<button class="button tertiary">
+  <img class="icon" src="/copy.svg" alt="Copy" />
+</button>
+```
+
+## State
+
+<SamplePane>
+  <button class="button" disabled><img class="icon" src="/delete.svg"/>Delete</button>
+  <button class="button secondary" disabled><progress class="progress circular icon" style="color: gray;" />Sending...</button>
+</SamplePane>
+
+```html
+<button class="button" disabled>
+  <img class="icon" src="/delete.svg"/>
+  Delete
+</button>
+<button class="button secondary" disabled>
+  <progress class="progress circular icon" style="color: gray;" />
+  Sending...
+</button>
+```
+
+## Size and Color
+
+There are no pre-defined variants for size and color.  
+Write your own CSS and it just works!
+
+<SamplePane>
+  <button class="button my-small">Hello</button>
+  <button class="button my-large">Hello</button>
+  <button class="button my-destructive">Hello</button>
+</SamplePane>
+```html
+<button class="button my-small">Hello</button>
+<button class="button my-large">Hello</button>
+<button class="button my-destructive">Hello</button>
+
+<style>
+  .button.my-small {
+    height: 32px;
+    padding: 0 12px;
+  }
+  .button.my-large {
+    height: 48px;
+    border-radius: 12px;
+    padding: 0 24px;
+  }
+  .button.my-destructive {
+    background-color: rgb(225 83 83);
+  }
+</style>
+```
+
+## Q&A
+
+### I don't want ripple effects
+
+You can set `--sui-button-ripple-effect-content` to `none`.

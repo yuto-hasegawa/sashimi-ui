@@ -1,0 +1,65 @@
+---
+title: Checkbox
+layout: ../../components/Layout.astro
+---
+
+import SamplePane from "../../components/SamplePane.astro";
+
+# Switch
+
+`.switch` makes `input[type="checkbox"]` look like a switch.
+
+## Applicable Elements
+
+- `input[type="checkbox"]`
+
+## Basic Usage
+
+<SamplePane>
+<label class="label">Use wasabi<input class="switch" type="checkbox" /></label>
+<div>
+  <label class="label" for="sushi">Sushi mode</label>
+  <input class="switch" type="checkbox" id="sushi" checked />
+</div>
+</SamplePane>
+
+```html
+<label class="label">
+  Use wasabi
+  <input class="switch" type="checkbox" />
+</label>
+<div>
+  <label class="label" for="sushi">Sushi mode</label>
+  <input class="switch" type="checkbox" id="sushi" checked />
+</div>
+```
+
+## State
+
+<SamplePane>
+<label class="label error">Use wasabi<input class="switch error" type="checkbox" /></label>
+<label class="label">Sushi mode<input class="switch" type="checkbox" disabled checked /></label>
+</SamplePane>
+
+```html
+<label class="label error">
+  Use wasabi
+  <input class="switch error" type="checkbox" />
+</label>
+<label class="label">
+  Sushi mode
+  <input class="switch" type="checkbox" disabled checked />
+</label>
+```
+
+## Wrapper component
+
+React component `Input` is available.  
+It works well with [`Fieldset`](/components/fieldset).
+
+## Q&A
+
+### How to customize the bold line that appears when focused?
+
+You can set `outline` property in CSS.  
+Though it is recommended to leave it as default for accessibility.

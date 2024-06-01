@@ -1,0 +1,8 @@
+/* Base */
+.legend:where(legend) {
+  padding: 0;
+}
+
+.legend:where(legend):where(.error) {
+  color: var(--sui-color-error);
+}

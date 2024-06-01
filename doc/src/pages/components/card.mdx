@@ -1,0 +1,77 @@
+---
+title: Card
+layout: ../../components/Layout.astro
+---
+
+import SamplePane from "../../components/SamplePane.astro";
+import "./card.css";
+
+# Card
+
+`.card` makes elements look like a card.
+
+## Applicable Elements
+
+- `a`
+- `button`
+- Any other container elements
+
+## Basic Usage
+
+Elements get interactive only when they are `a` or `button`.
+
+<SamplePane filled style={{display: "grid", alignItems: "stretch", gridTemplateColumns: "1fr 1fr 1fr"}}>
+  <a class="card" href="">
+    <p class="my-chip">&lt;a/&gt;</p>
+    <p class="my-title">Anchor Card</p>
+    <p class="my-body">This card is a HTML anchor element. Useful when listing tumbnails, for example.</p>
+  </a>
+  <button class="card">
+    <p class="my-chip">&lt;button/&gt;</p>
+    <p class="my-title">Button Card</p>
+    <p class="my-body">This card is a HTML button element. I don't know when to use, but it works.</p>
+  </button>
+  <div class="card">
+    <p class="my-chip">&lt;div/&gt;</p>
+    <p class="my-title">Neutral Card</p>
+    <p class="my-body">This card is a HTML div element. Not only `div` but also `nav` `section` and other container elements can be used.</p>
+  </div>
+</SamplePane>
+
+```html
+<a class="card" href="">
+  <p class="my-chip">&lt;a&gt;</p>
+  <p class="my-title">Anchor Card</p>
+  <p class="my-body">This card is a HTML anchor element. Useful when listing tumbnails, for example.</p>
+</a>
+<button class="card">
+  <p class="my-chip">&lt;button&gt;</p>
+  <p class="my-title">Button Card</p>
+  <p class="my-body">This card is a HTML button element. I don't know when to use, but it works.</p>
+</button>
+<div class="card">
+  <p class="my-chip">&lt;div&gt;</p>
+  <p class="my-title">Neutral Card</p>
+  <p class="my-body">This card is a HTML div element. Not only `div`
+    but also `nav` `section` and other container elements can be used.</p>
+</div>
+```
+
+## Customization
+
+`.card` is not interested in its content.
+Feel free to write html and css as always.
+
+<SamplePane filled>
+  <button class="card" style="padding:0; width:min-content;">
+    <img src="/sashimi.jpg" width="320" />
+    <p style="padding:12px; margin:0;">Hello This is a button card with a large thumbnail.</p>
+  </button>
+</SamplePane>
+
+```html
+<button class="card" style="padding:0; width:min-content;">
+  <img src="/sashimi.jpg" width="320" />
+  <p style="padding:12px; margin:0;">Hello This is a button card with a large thumbnail.</p>
+</button>
+```

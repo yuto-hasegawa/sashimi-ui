@@ -1,0 +1,27 @@
+---
+import type { CSSProperty } from "astro/types";
+
+interface Props {
+	style?: CSSProperty;
+	filled?: boolean;
+}
+
+const { style, filled = false } = Astro.props;
+---
+
+<div class:list={["wrapper","card", {"filled": filled}]} style={style}>
+  <slot />
+</div>
+
+<style>
+  .wrapper {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .filled {
+    background: #f7f7f9;
+  }
+</style>

@@ -1,0 +1,60 @@
+:root {
+  --sui-color-neutral-primary: #39454f;
+  --sui-color-neutral-secondary: #899196;
+
+  --sui-color-neutral-tertiary: #dbe0e4;
+  --sui-color-on-neutral-tertiary: #6c757b;
+
+  --sui-color-key-primary: #1261ec;
+  --sui-color-on-key-primary: #ffffff;
+
+  --sui-color-key-secondary: #6093ec;
+
+  --sui-color-key-tertiary: #d4e2fc;
+
+  --sui-color-outline-primary: #c1c8ce;
+  --sui-color-outline-secondary: #e3e7e9;
+
+  --sui-color-highlight-primary: #dfdfe7;
+  --sui-color-highlight-secondary: #f6f6f8;
+
+  --sui-color-surface: #ffffff;
+  
+  --sui-color-disabled-fill: #f3f5f8;
+  --sui-color-error: #ff4b6c;
+
+  --sui-color-scrim: rgba(57, 69, 79, 0.65);
+
+  --sui-roundness: 8px;
+  --sui-base-padding: 12px;
+  --sui-icon-gap: 0.3em;
+  --sui-regular-ripple-effect-density: 0.2;
+  --sui-broad-ripple-effect-density: 0.5;
+  --sui-input-base-height: 40px;
+  --sui-shadow-hover: 0px 2px 12px rgba(24, 69, 95, 0.2);
+
+  /* components specific */
+  --sui-button-height: 40px;
+  --sui-button-font-weight: 400;
+  --sui-button-horizontal-padding: 16px;
+  --sui-button-ripple-effect-content: "";
+
+  --sui-checkbox-size: 20px;
+  --sui-radio-size: 20px;
+  --sui-label-gap: 4px;
+  
+
+  /* Not adjusted yet */
+  --color-error: var(--color-red);
+
+  --shadow-shallow: 0px 2px 12px rgba(0, 0, 0, 0.02);
+  --shadow-card: 0px 4px 12px rgba(24, 93, 95, 0.06);
+
+  --padding-sp: 20px;
+  --padding-pc: 64px;
+  --width-min: 320px;
+  --width-max: 1400px;
+
+  --header-height: 80px;
+  --rest-height: calc(100vh - var(--header-height));
+}

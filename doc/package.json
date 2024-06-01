@@ -1,0 +1,26 @@
+{
+  "name": "doc",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/mdx": "^3.0.1",
+    "@astrojs/react": "^3.4.0",
+    "astro": "^4.9.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "sashimi-ui": "file:..",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0"
+  }
+}

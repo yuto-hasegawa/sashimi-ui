@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded&family=Inter:wght@100..900&family=Source+Code+Pro&display=swap");
+
+html {
+  font-family: "Inter", system-ui, sans-serif;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--sui-color-neutral-primary);
+  line-height: 1.6;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-block-start: 64px;
+}
+
+:not(.astro-code) > code {
+  display: inline-block;
+  font-family: "Source Code Pro", monospace;
+  background-color: var(--sui-color-highlight-secondary);
+  border: 1px solid var(--sui-color-outline-secondary);
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.astro-code {
+  padding: 16px;
+  border-radius: var(--sui-roundness);
+  font-family: "Source Code Pro", monospace;
+}
+
+ul {
+  padding-inline-start: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}

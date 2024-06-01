@@ -1,0 +1,36 @@
+/* Base */
+.input:where(:not([type])),
+.input:where([type="date"]),
+.input:where([type="datetime-local"]),
+.input:where([type="email"]),
+.input:where([type="month"]),
+.input:where([type="number"]),
+.input:where([type="password"]),
+.input:where([type="search"]),
+.input:where([type="tel"]),
+.input:where([type="text"]),
+.input:where([type="time"]),
+.input:where([type="url"]),
+.input:where([type="week"]) {
+  font: inherit;
+  height: var(--sui-input-base-height);
+  padding: 0 var(--sui-base-padding);
+  box-sizing: border-box;
+  border: 1px solid var(--sui-color-outline-primary);
+  border-radius: var(--sui-roundness);
+  color: var(--sui-color-neutral-primary);
+}
+
+.input::placeholder {
+  color: var(--sui-color-neutral-secondary);
+}
+
+.input:disabled {
+  background-color: var(--sui-color-disabled-fill);
+}
+
+/* Variants */
+.input:where(.error) {
+  border-color: var(--sui-color-error);
+}
+

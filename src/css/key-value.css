@@ -1,0 +1,16 @@
+.key-value:where(dl) {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 24px;
+  row-gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.key-value:where(dl) dt {
+  color: var(--sui-color-neutral-secondary);
+}
+.key-value:where(dl) dd {
+  margin: 0;
+  justify-self: end;
+}

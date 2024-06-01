@@ -1,0 +1,74 @@
+---
+title: Radio
+layout: ../../components/Layout.astro
+---
+
+import SamplePane from "../../components/SamplePane.astro";
+
+# Radio
+
+`.radio` is for input elements which accept text input.
+
+## Applicable Elements
+
+- `input[type="radio"]`
+
+## Basic Usage
+
+<SamplePane>
+<fieldset class="fieldset">
+  <label class="label"><input class="radio" type="radio" name="neta" checked />Iwashi</label>
+  <label class="label"><input class="radio" type="radio" name="neta" />Anago</label>
+  <div>
+    <input class="radio" type="radio" id="wasabi" name="neta" />
+    <label class="label" for="wasabi">Tamago</label>
+  </div>
+</fieldset>
+</SamplePane>
+
+```html
+<fieldset class="fieldset">
+  <label class="label"><input class="radio" type="radio" name="neta" checked />Iwashi</label>
+  <label class="label"><input class="radio" type="radio" name="neta" />Anago</label>
+  <div>
+    <input class="radio" type="radio" id="wasabi" name="neta" />
+    <label class="label" for="wasabi">Tamago</label>
+  </div>
+</fieldset>
+```
+
+## State
+
+<SamplePane style={{gap: "64px"}}>
+<fieldset className="fieldset">
+  <label class="label error"><input class="radio error" type="radio" name="drink" checked />Tea</label>
+  <label class="label error"><input class="radio error" type="radio" name="drink" />Beer</label>
+</fieldset>
+<fieldset className="fieldset" disabled>
+  <label class="label"><input class="radio" type="radio" name="seasoning" checked />Soy Sauce</label>
+  <label class="label"><input class="radio" type="radio" name="seasoning" />Salt</label>
+</fieldset>
+</SamplePane>
+
+```html
+<fieldset className="fieldset">
+  <label class="label error"><input class="radio error" type="radio" name="drink" checked />Tea</label>
+  <label class="label error"><input class="radio error" type="radio" name="drink" />Beer</label>
+</fieldset>
+<fieldset className="fieldset" disabled>
+  <label class="label"><input class="radio" type="radio" name="seasoning" checked />Soy Sauce</label>
+  <label class="label"><input class="radio" type="radio" name="seasoning" />Salt</label>
+</fieldset>
+```
+
+## Wrapper component
+
+React component `Input` is available.  
+It works well with [`Fieldset`](/components/fieldset).
+
+## Q&A
+
+### How to customize the bold line that appears when focused?
+
+You can set `outline` property in CSS.  
+Though it is recommended to leave it as default for accessibility.

@@ -1,0 +1,88 @@
+---
+const path = Astro.url.pathname;
+---
+
+<div class="wrapper">
+  <div class="scroller">
+    <p>sashimi UI</p>
+
+    <ul class="list">
+      <li><a class:list={["menu-item", {"active": path === "/"}]} href="/">Introduction</a></li>
+      <li><a class:list={["menu-item", {"active": path === "/"}]} href="/">Getting Started</a></li>
+      <li><a class:list={["menu-item", {"active": path === "/"}]} href="/">Themeing</a></li>
+      <li><a class:list={["menu-item", {"active": path === "/"}]} href="/">Components</a></li>
+    </ul>
+
+    <p class="category">ACTIONS</p>
+    <ul class="list">
+      <li><a class:list={["menu-item", {"active": path === "/components/button"}]} href="/components/button">Button</a></li>
+      <li><a class:list={["menu-item", {"active": path === "/components/link"}]} href="/components/link">Link</a></li>
+      <li><a class:list={["menu-item", {"active": path === "/components/card"}]} href="/components/card">Card</a></li>
+      <li><a class:list={["menu-item", {"active": path === "/components/menu-item"}]} href="/components/menu-item">Menu Item</a></li>
+    </ul>
+      
+    <p class="category">FORM</p>
+    <ul class="list">
+      <li><a class:list={["menu-item", {"active": path === "/components/input"}]} href="/components/input">Input</a></li>
+      <li><a class:list={["menu-item", {"active": path === "/components/textarea"}]} href="/components/textarea">Textarea</a></li>
+      <li><a class:list={["menu-item", {"active": path === "/components/select"}]} href="/components/select">Select</a></li>
+      <li><a class:list={["menu-item", {"active": path === "/components/checkbox"}]} href="/components/checkbox">Checkbox</a></li>
+      <li><a class:list={["menu-item", {"active": path === "/components/switch"}]} href="/components/switch">Switch</a></li>
+      <li><a class:list={["menu-item", {"active": path === "/components/radio"}]} href="/components/radio">Radio</a></li>
+      <li><a class:list={["menu-item", {"active": path === "/components/legend"}]} href="/components/legend">Legend</a></li>
+      <li><a class:list={["menu-item", {"active": path === "/components/helper-text"}]} href="/components/helper-text">Helper Text</a></li>
+      <li><a class:list={["menu-item", {"active": path === "/components/fieldset"}]} href="/components/fieldset">Fieldset</a></li>
+    </ul>
+      
+    <p class="category">MISCS.</p>
+    <ul class="list">
+      <li><a class:list={["menu-item", {"active": path === "/components/table"}]} href="/components/table">Table</a></li>
+      <li><a class:list={["menu-item", {"active": path === "/components/key-value"}]} href="/components/key-value">Key-Value</a></li>
+      <li><a class:list={["menu-item", {"active": path === "/components/dialog"}]} href="/components/dialog">Dialog</a></li>
+      <li><a class:list={["menu-item", {"active": path === "/components/progress"}]} href="/components/progress">Progress</a></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  const path = window.location.pathname;
+  const anchorEl = document.querySelector(`a[href="${path}"]`);
+  if (anchorEl) {
+    anchorEl.scrollIntoView({block: "center"})
+  }
+</script>
+
+<style>
+  .wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+  .scroller {
+    padding: 16px;
+    position: absolute;
+    inset: 0;
+    overflow: auto;
+  }
+  .scroller::-webkit-scrollbar{
+    width: 12px;
+  }
+  .scroller::-webkit-scrollbar-track{
+    background-color: transparent;
+  }
+  .scroller::-webkit-scrollbar-thumb{
+    background-color: var(--sui-color-neutral-tertiary);
+    border-radius: 20px;
+  }
+  .category {
+    padding: 0 12px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-block-start: 32px;
+  }
+  .list {
+    list-style: none;
+    padding: 0;
+    gap: 0;
+  }
+</style>

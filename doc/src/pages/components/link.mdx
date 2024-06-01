@@ -1,0 +1,63 @@
+---
+title: Link
+layout: ../../components/Layout.astro
+---
+
+import SamplePane from "../../components/SamplePane.astro";
+
+# Link
+
+`.link` makes elements look like a link.
+
+## Applicable Elements
+
+- `a`
+- `button`
+
+## Basic Usage
+
+<SamplePane style={{ flexDirection: "column" }}>
+  <p>
+    Click the following link to navigate to <a class="link" href="/">Introduction Page</a>.<br/>
+    And the next link is actually a button and <button class="link" onclick="alert('hello')">shows an alert</button> when clicked.
+  </p>
+</SamplePane>
+
+```html
+<p>
+  Click the following link to navigate to <a class="link" href="/">Introduction Page</a>.<br/>
+  And the next link is actually a button and <button class="link" onclick="alert('hello')">shows an alert</button> when clicked.
+</p>
+```
+
+## Variants
+
+<SamplePane style={{ flexDirection: "column" }}>
+  <p>
+    Here is a <a class="link" href="">normal link</a> which is normal.<br/>
+    And the following link <a class="link seamless" href="">sits seamlessly</a> in the text. <br/>
+    Passive link is suitable for sublinks like <a class="link passive" href="">Privacy Policy</a>. 
+  </p>
+</SamplePane>
+```html
+<p>
+  Here is a <a class="link" href="">normal link</a> which is normal.<br/>
+  And the following link <a class="link seamless" href="">sits seamlessly</a> in the text. <br/>
+  Passive link is suitable for sublinks like <a class="link passive" href="">Privacy Policy</a>. 
+</p>
+```
+
+## Combination
+
+`.icon` suits well with `.link`.
+
+<SamplePane>
+  <a class="link" href="https://github.com" target="_blank">GitHub.com<img class="icon" src="/open_in_new.svg" /></a>
+</SamplePane>
+
+```html
+<a class="link" href="https://github.com" target="_blank">
+  GitHub.com
+  <img class="icon" src="/open_in_new.svg" />
+</a>
+```

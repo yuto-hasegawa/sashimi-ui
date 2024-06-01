@@ -1,0 +1,39 @@
+{
+	"name": "sashimi-ui",
+	"version": "0.0.11",
+	"description": "UI library which brings out the best of the ingredients(HTML)",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"clean": "rm -rf dist",
+		"build": "npm run clean&&npm run build:react&&npm run build:css",
+		"build:react": "tsc",
+		"build:css": "cp -r src/css dist/css&&npm run build:css:bundle&&npm run build:css:suibundle",
+		"build:css:bundle": "ls src/css/*.css | grep -v .theme.css | xargs cat | postcss --config config/default > dist/css/bundle.css",
+		"build:css:suibundle": "ls src/css/*.css | grep -v .theme.css | xargs cat | postcss --config config/sui-prefixed > dist/css/sui-bundle.css"
+	},
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"@biomejs/biome": "^1.7.3",
+		"@types/react": "^18.0.0",
+		"@types/react-dom": "^18.0.0",
+		"autoprefixer": "^10.4.19",
+		"cssnano": "^7.0.1",
+		"postcss": "^8.4.38",
+		"postcss-cli": "^11.0.0",
+		"postcss-rename": "^0.6.1",
+		"typescript": "^5.4.5"
+	},
+	"peerDependencies": {
+		"react": ">=18.0.0 <19.0.0",
+		"react-dom": ">=18.0.0 <19.0.0"
+	},
+	"files": ["dist"],
+	"exports": {
+		"./*.css": "./dist/css/*.css",
+		"./react/*": "./dist/react/*",
+		"./react": "./dist/react/index.js",
+		"./package.json": "./package.json"
+	}
+}

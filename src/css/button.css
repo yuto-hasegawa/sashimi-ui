@@ -1,0 +1,114 @@
+/* Reset */
+.button:where(button) {
+  font: inherit;
+  border: none;
+}
+.button:where(a) {
+  text-decoration: none;
+}
+
+/* Base */
+.button {
+  display: inline flex;
+  position: relative;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--sui-button-horizontal-padding);
+  border-radius: var(--sui-roundness);
+  height: var(--sui-button-height);
+  font-weight: var(--sui-button-font-weight);
+  overflow: hidden;
+  cursor: pointer;
+  gap: var(--sui-icon-gap);
+
+  color: var(--sui-color-on-key-primary);
+  background: var(--sui-color-key-primary);
+}
+.button:hover {
+  opacity: 0.9;
+}
+.button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+/* Ripple Effect */
+.button::before {
+  content: var(--sui-button-ripple-effect-content);
+  display: block;
+  position: absolute;
+  width: 110%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  opacity: 0;
+  background-color: var(--sui-color-on-key-primary);
+  transition: all 300ms ease-out;
+  z-index: -1;
+}
+
+.button:active::before {
+  width: 0px;
+  height: 0px;
+  opacity: var(--sui-regular-ripple-effect-density);
+  transition: all 0s;
+}
+.button:disabled::before {
+  content: none;
+}
+
+/* Variants */
+.button:where(.secondary) {
+  background-color: transparent;
+  color: var(--sui-color-key-primary);
+  border: 1px solid var(--sui-color-key-tertiary);
+}
+.button:where(.secondary):hover {
+  background-color: var(--sui-color-key-tertiary);
+}
+.button:where(.secondary)::before {
+  background-color: var(--sui-color-key-secondary);
+}
+
+.button:where(.tertiary) {
+  background: transparent;
+  border: 1px solid var(--sui-color-outline-secondary);
+  color: var(--sui-color-neutral-secondary);
+}
+.button:where(.tertiary):hover {
+  background-color: var(--sui-color-highlight-secondary);
+}
+.button:where(.tertiary)::before {
+  background-color: var(--sui-color-neutral-primary);
+}
+
+.button:where(.shy) {
+  background: transparent;
+  color: var(--sui-color-neutral-secondary);
+}
+.button:where(.shy):hover {
+  background-color: var(--sui-color-highlight-secondary);
+}
+.button:where(.shy)::before {
+  background-color: var(--sui-color-neutral-primary);
+}
+
+/* States */
+.button:disabled {
+  color: var(--sui-color-on-neutral-tertiary);
+  background-color: var(--sui-color-disabled-fill);
+  border-width: 0;
+  cursor: default;
+  opacity: 1;
+}
+
+/* Combinations */
+.button .icon {
+  width: 1.2em;
+  height: 1.2em;
+}
+.button .icon:first-child {
+  margin-left: -0.2em;
+}
+.button .icon:last-child {
+  margin-right: -0.2em;
+}

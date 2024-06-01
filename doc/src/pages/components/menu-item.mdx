@@ -1,0 +1,71 @@
+---
+title: Menu Item
+layout: ../../components/Layout.astro
+---
+
+import SamplePane from "../../components/SamplePane.astro";
+
+# Menu Item
+
+`.menu-item` makes elements look like a menu item.
+
+## Applicable Elements
+
+- `a`
+- `button`
+
+## Basic Usage
+
+<SamplePane filled>
+  <ul class="card" style="width: fit-content; background: #FFFFFF;">
+    <li><a class="menu-item" href="#basic-usage">Anchor</a></li>
+    <li><button class="menu-item">Copy URL</button></li>
+    <li><button class="menu-item">Sign out</button></li>
+  </ul>
+</SamplePane>
+
+```html
+<ul class="card" style="width: fit-content;">
+  <li><a class="menu-item" href="#basic-usage">Anchor</a></li>
+  <li><button class="menu-item">Copy URL</button></li>
+  <li><button class="menu-item">Sign out</button></li>
+</ul>
+```
+
+## Variants
+
+`.menu-item` has `.active` variant.
+
+<SamplePane filled>
+  <ul class="card" style="width: fit-content;">
+    <li><a class="menu-item" href="#variants">Button</a></li>
+    <li><a class="menu-item" href="#variants">Link</a></li>
+    <li><a class="menu-item active" href="#variants">Menu Item</a></li>
+  </ul>
+</SamplePane>
+
+```html
+<ul class="card" style="width: fit-content;">
+  <li><a class="menu-item" href="#variants">Button</a></li>
+  <li><a class="menu-item" href="#variants">Link</a></li>
+  <li><a class="menu-item active" href="#variants">Menu Item</a></li>
+</ul>
+```
+
+## Combination
+
+`.icon` sits well with `.menu-item`.
+
+<SamplePane filled>
+  <ul class="card" style="width: fit-content;">
+    <li><a class="menu-item" href="#combination"><img class="icon" src="/sign_in.svg" />Sign in</a></li>
+    <li><button class="menu-item"><img class="icon" src="/share.svg" />Share with friends</button></li>
+  </ul>
+</SamplePane>
+
+```html
+<ul class="card" style="width: fit-content;">
+  <li><a class="menu-item" href="#combination"><img class="icon" src="/sign_in.svg" />Sign in</a></li>
+  <li><button class="menu-item"><img class="icon" src="/share.svg" />Share with friends</button></li>
+</ul>
+```

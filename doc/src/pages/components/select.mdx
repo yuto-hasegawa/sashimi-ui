@@ -1,0 +1,66 @@
+---
+title: Select
+layout: ../../components/Layout.astro
+---
+
+import SamplePane from "../../components/SamplePane.astro";
+
+# Select
+
+`.select` is for html select.
+
+## Applicable Elements
+
+- `select`
+
+## Basic Usage
+
+<SamplePane>
+<select class="select">
+  <option value="">Choose a "neta"</option>
+  <option value="akami">Akami</option>
+  <option value="salmon">Salmon</option>
+  <option value="engawa">Engawa</option>
+</select>
+</SamplePane>
+
+## State
+
+<SamplePane>
+<select class="select error">
+  <option value="akami">Akami</option>
+  <option value="salmon">Salmon</option>
+</select>
+<select class="select" disabled>
+  <option value="akami">Akami</option>
+  <option value="salmon">Salmon</option>
+</select>
+</SamplePane>
+
+```html
+<select class="select error">
+  <option value="akami">Akami</option>
+  <option value="salmon">Salmon</option>
+</select>
+<select class="select" disabled>
+  <option value="akami">Akami</option>
+  <option value="salmon">Salmon</option>
+</select>
+```
+
+## Wrapper component
+
+React component `Select` is available.  
+It works well with [`Fieldset`](/components/fieldset).
+
+## Q&A
+
+### How Can I customize option style?
+
+Customizing option style is not supported by CSS.  
+It is recommended to use native options for accessibility.
+
+### How to customize the bold line that appears when focused?
+
+You can set `outline` property in CSS.  
+Though it is recommended to leave it as default for accessibility.

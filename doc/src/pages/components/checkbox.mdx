@@ -1,0 +1,75 @@
+---
+title: Checkbox
+layout: ../../components/Layout.astro
+---
+
+import SamplePane from "../../components/SamplePane.astro";
+
+# Checkbox
+
+`.checkbox` is for `input[type="checkbox"]`.
+
+## Applicable Elements
+
+- `input[type="checkbox"]`
+
+## Basic Usage
+
+<SamplePane>
+<label class="label"><input class="checkbox" type="checkbox" checked/>Do you want garlic added?</label>
+<div>
+  <input class="checkbox" type="checkbox" id="wasabi" />
+  <label class="label" for="wasabi">Can I add wasabi?</label>
+</div>
+<div>
+  <label class="label" for="friday">Is it Friday today?</label>
+  <input class="checkbox" type="checkbox" id="friday" />
+</div>
+</SamplePane>
+
+```html
+<label class="label"><input class="checkbox" type="checkbox" checked/>Do you want garlic added?</label>
+<div>
+  <input class="checkbox" type="checkbox" id="wasabi" />
+  <label class="label" for="wasabi">Can I add wasabi?</label>
+</div>
+<div>
+  <label class="label" for="friday">Is it Friday today?</label>
+  <input class="checkbox" type="checkbox" id="friday" />
+</div>
+```
+
+## State
+
+<SamplePane>
+<label class="label error"><input class="checkbox error" type="checkbox" />This is an error</label>
+<label class="label"><input class="checkbox" type="checkbox" disabled />This is disabled</label>
+<label class="label"><input class="checkbox" type="checkbox" checked disabled />Checked disabled</label>
+</SamplePane>
+
+```html
+<label class="label error">
+  <input class="checkbox error" type="checkbox" />
+  This is an error
+</label>
+<label class="label">
+  <input class="checkbox" type="checkbox" disabled />
+  This is disabled
+</label>
+<label class="label">
+  <input class="checkbox" type="checkbox" checked disabled />
+  Checked disabled
+</label>
+```
+
+## Wrapper component
+
+React component `Input` is available.  
+It works well with [`Fieldset`](/components/fieldset).
+
+## Q&A
+
+### How to customize the bold line that appears when focused?
+
+You can set `outline` property in CSS.  
+Though it is recommended to leave it as default for accessibility.

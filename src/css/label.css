@@ -1,0 +1,45 @@
+/* with checkbox */
+.label:has(.checkbox) {
+  display: inline flex;
+  align-items: center;
+  gap: var(--sui-label-gap);
+}
+.label:has(+.checkbox) {
+  margin-inline-end: var(--sui-label-gap);
+}
+.checkbox+.label {
+  margin-inline-start: var(--sui-label-gap);
+}
+
+/* with switch */
+.label:has(.switch) {
+  display: inline flex;
+  align-items: center;
+  gap: var(--sui-label-gap);
+}
+.label:has(+.switch) {
+  margin-inline-end: var(--sui-label-gap);
+  vertical-align: middle;
+}
+.switch+.label {
+  margin-inline-start: var(--sui-label-gap);
+  vertical-align: middle;
+}
+
+/* with radio */
+.label:has(.radio) {
+  display: inline flex;
+  align-items: center;
+  gap: var(--sui-label-gap);
+}
+.label:has(+.radio) {
+  margin-inline-end: var(--sui-label-gap);
+}
+.radio+.label {
+  margin-inline-start: var(--sui-label-gap);
+}
+
+/* State */
+.label:where(.error) {
+  color: var(--sui-color-error);
+}

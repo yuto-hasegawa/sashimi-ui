@@ -1,0 +1,14 @@
+.button.my-small {
+  height: 32px;
+  padding: 0 12px;
+}
+
+.button.my-large {
+  height: 48px;
+  border-radius: 12px;
+  padding: 0 24px;
+}
+
+.button.my-destructive {
+  background-color: rgb(225 83 83);
+}

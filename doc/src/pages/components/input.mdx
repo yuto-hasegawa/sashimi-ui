@@ -1,0 +1,53 @@
+---
+title: Input
+layout: ../../components/Layout.astro
+---
+
+import SamplePane from "../../components/SamplePane.astro";
+
+# Input
+
+`.input` is for input elements which accept text input.
+
+## Applicable Elements
+
+- `input` (with types which accept text input)
+
+## Basic Usage
+
+<SamplePane>
+  <input class="input" type="text" placeholder="Text Input" />
+  <input class="input" type="number" placeholder="Numeric" style="width: 120px;" />
+  <input class="input" type="datetime-local" />
+</SamplePane>
+
+```html
+<input class="input" type="text" placeholder="Text Input" />
+<input class="input" type="number" placeholder="Numeric" style="width: 120px;" />
+<input class="input" type="datetime-local" />
+```
+
+## State
+
+<SamplePane>
+  <input class="input error" type="text" placeholder="Error" />
+  <input class="input" type="datetime-local" disabled />
+</SamplePane>
+
+```html
+<input class="input error" type="text" placeholder="Error" />
+<input class="input" type="datetime-local" disabled />
+```
+
+
+## Wrapper component
+
+React component `Input` is available.  
+It works well with [`Fieldset`](/components/fieldset).
+
+## Q&A
+
+### How to customize the bold line that appears when focused?
+
+You can set `outline` property in CSS.  
+Though it is recommended to leave it as default for accessibility.

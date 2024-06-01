@@ -1,0 +1,90 @@
+---
+title: Table
+layout: ../../components/Layout.astro
+---
+
+import SamplePane from "../../components/SamplePane.astro";
+
+# Table
+
+`.table` is for html table.
+
+## Applicable Elements
+
+- `table`
+
+## Basic Usage
+
+<SamplePane style={{background: "#f7f7f9"}}>
+<table class="table card" style="width:auto; padding:0;">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>Tuna</td>
+        <td>$12</td>
+        <td>Fresh tuna slices</td>
+    </tr>
+    <tr>
+        <td>Salmon</td>
+        <td>$10</td>
+        <td>Rich, fatty salmon</td>
+    </tr>
+    <tr>
+        <td>Octopus</td>
+        <td>$8</td>
+        <td>Chewy and savory</td>
+    </tr>
+    <tr>
+        <td>Shrimp</td>
+        <td>$9</td>
+        <td>Sweet and tender</td>
+    </tr>
+  </tbody>
+  <caption>
+    price of sashimi
+  </caption>
+</table>
+</SamplePane>
+
+```html
+<table class="table card" style="width:auto; padding:0; background: white;">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>Tuna</td>
+        <td>$12</td>
+        <td>Fresh tuna slices</td>
+    </tr>
+    <tr>
+        <td>Salmon</td>
+        <td>$10</td>
+        <td>Rich, fatty salmon</td>
+    </tr>
+    <tr>
+        <td>Octopus</td>
+        <td>$8</td>
+        <td>Chewy and savory</td>
+    </tr>
+    <tr>
+        <td>Shrimp</td>
+        <td>$9</td>
+        <td>Sweet and tender</td>
+    </tr>
+  </tbody>
+  <caption>
+    price of sashimi
+  </caption>
+</table>
+```

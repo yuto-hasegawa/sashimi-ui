@@ -1,0 +1,48 @@
+---
+title: Textarea
+layout: ../../components/Layout.astro
+---
+
+import SamplePane from "../../components/SamplePane.astro";
+
+# Textarea
+
+`.textarea` is for html textarea.
+
+## Applicable Elements
+
+- `textarea`
+
+## Basic Usage
+
+<SamplePane>
+<textarea class="textarea" rows="4" style="width: 320px;" placeholder="This is a textarea."></textarea>
+</SamplePane>
+
+```html
+<textarea class="textarea" rows="4" style="width: 320px;" placeholder="This is a textarea."></textarea>
+```
+
+## State
+
+<SamplePane>
+<textarea class="textarea error" rows="3" style="width: 320px;" placeholder="This is a textarea."></textarea>
+<textarea class="textarea" rows="3" style="width: 320px;" disabled>This textarea is disabled.</textarea>
+</SamplePane>
+
+```html
+<textarea class="textarea error" rows="3" style="width: 320px;" placeholder="This is a textarea."></textarea>
+<textarea class="textarea" rows="3" style="width: 320px;" disabled>This textarea is disabled.</textarea>
+```
+
+## Wrapper component
+
+React component `Textarea` is available.  
+It works well with [`Fieldset`](/components/fieldset).
+
+## Q&A
+
+### How to customize the bold line that appears when focused?
+
+You can set `outline` property in CSS.  
+Though it is recommended to leave it as default for accessibility.

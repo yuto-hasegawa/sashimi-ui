@@ -1,0 +1,83 @@
+/* Reset */
+.menu-item:where(a) {
+  color: inherit;
+  text-decoration: none;
+}
+.menu-item:where(button) {
+  color: inherit;
+  font: inherit;
+  border: none;
+  background: none;
+  text-align: inherit;
+}
+
+/* Base */
+.menu-item {
+  width: 100%;
+  position: relative;
+  padding: calc(var(--sui-base-padding) * 2 / 3 ) var(--sui-base-padding);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font: inherit;
+  border-radius: var(--sui-roundness);
+  background-color: transparent;
+  cursor: pointer;
+  min-height: 40px;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 0;
+  gap: var(--sui-icon-gap);
+}
+.menu-item:hover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  background-color: var(--sui-color-highlight-secondary);
+  z-index: -2;
+}
+
+/* Ripple Effect */
+.menu-item:where(a):hover::after,
+.menu-item:where(button):hover::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 110%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--sui-color-neutral-primary);
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: all 200ms ease-out;
+  z-index: -1;
+}
+
+.menu-item:where(a):active::after,
+.menu-item:where(button):active::after {
+  width: 0px;
+  height: 0px;
+  opacity: var(--sui-regular-ripple-effect-density);
+  transition: all 0s;
+}
+
+/* Variants */
+.menu-item:where(.active) {
+  background-color: var(--sui-color-key-tertiary);
+  color: var(--sui-color-key-primary);
+}
+.menu-item:where(.active):hover {
+  opacity: 0.8;
+}
+.menu-item:where(.active):hover::before {
+  content: none;
+}
+
+/* Combinations */
+:where(.menu-item) .icon {
+  width: 1.3em;
+  height: 1.3em;
+}

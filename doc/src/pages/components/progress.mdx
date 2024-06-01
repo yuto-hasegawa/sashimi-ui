@@ -1,0 +1,46 @@
+---
+title: Progress
+layout: ../../components/Layout.astro
+---
+
+import SamplePane from "../../components/SamplePane.astro";
+
+# Progress
+
+`.progress` is for html progress.
+
+> [!Caveat]
+
+> `.progress` uses non-standard css properties, `::-webkit-progress-value` and `::-webkit-progress-bar`.
+
+## Applicable Elements
+
+- `progress`
+
+## Basic Usage
+
+<SamplePane>
+<progress class="progress" max="100" value="70">70%</progress>
+<progress class="progress"></progress>
+</SamplePane>
+```html
+<progress class="progress" max="100" value="70">70%</progress>
+<progress class="progress"></progress>
+```
+
+## Variants
+
+`.circular` and `.skeleton` variant do not support determinate progress.
+
+<SamplePane>
+<div style="flex: 1; display: flex; justify-content: center;">
+<progress class="progress circular"></progress>
+</div>
+<div style="flex: 1;">
+<progress class="progress skeleton"></progress>
+</div>
+</SamplePane>
+```html
+<progress class="progress circular"></progress>
+<progress class="progress skeleton"></progress>
+```

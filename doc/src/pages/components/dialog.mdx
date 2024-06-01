@@ -1,0 +1,124 @@
+---
+title: Dialog
+layout: ../../components/Layout.astro
+---
+
+import SamplePane from "../../components/SamplePane.astro";
+import DialogUsageModal from "./dialog_usage_modal"
+import DialogUsagePopover from "./dialog_usage_popover"
+
+# Dialog
+
+`.dialog` is for html dialog.
+
+## Applicable Elements
+
+- `dialog`
+
+## Basic Usage
+
+<SamplePane>
+<dialog class="dialog" id="dialog-element">
+  <p>Hello, this is a dialog.</p>
+  <form method="dialog"><button class="button secondary">Close</button></form>
+</dialog>
+<button class="button" onclick="document.getElementById('dialog-element').showModal()">Open Dialog</button>
+</SamplePane>
+
+```html
+<dialog class="dialog" id="dialog-element">
+  <p>Hello, this is a dialog.</p>
+  <form method="dialog"><button class="button">OK</button></form>
+</dialog>
+<button class="button" onclick="document.getElementById('dialog-element').showModal()">Open Dialog</button>
+```
+
+## Wrapper Component
+
+React component `Dialog` is available.  
+It has following features:
+
+- Visibility is controlled by **`open` prop**. You don't need to call `showModal()` or `close()` imperatively.
+- Anchor element can be specified. It works not only as **modal**, but also as **popover**.
+- React Portal is used to render dialog in front of other elements.
+- Click away handler.
+
+
+<SamplePane>
+<DialogUsageModal client:only="react" />
+</SamplePane>
+
+```tsx
+export default function DialogUsageModal() {
+	const [open, setOpen] = useState(false);
+	return (
+		<div>
+			<button className="button" type="button" onClick={() => setOpen(true)}>
+				Click to set open={"{true}"}
+			</button>
+			<Dialog
+				mode="modal"
+				open={open}
+				onClickAway={() => {
+					setOpen(false);
+				}}
+				onCancel={() => {
+					setOpen(false);
+				}}
+			>
+				Click away to close
+			</Dialog>
+		</div>
+	);
+}
+```
+
+
+<SamplePane>
+<DialogUsagePopover client:only="react" />
+</SamplePane>
+
+```tsx
+export default function DialogUsagePopover() {
+	const buttonRef = React.useRef<HTMLButtonElement>(null);
+	const [open, setOpen] = useState(false);
+	return (
+		<div>
+			<button
+				ref={buttonRef}
+				className="button"
+				type="button"
+				onClick={() => setOpen(true)}
+			>
+				Menu
+			</button>
+			<Dialog
+				mode="popover"
+				open={open}
+				anchor={buttonRef.current as HTMLButtonElement}
+				onClickAway={() => {
+					setOpen(false);
+				}}
+			>
+				<ul style={{ listStyle: "none", padding: 0 }}>
+					<li>
+						<button type="button" className="menu-item">
+							Buri
+						</button>
+					</li>
+					<li>
+						<button type="button" className="menu-item">
+							Kampachi
+						</button>
+					</li>
+					<li>
+						<button type="button" className="menu-item">
+							Iwashi
+						</button>
+					</li>
+				</ul>
+			</Dialog>
+		</div>
+	);
+}
+```

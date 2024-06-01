@@ -1,0 +1,41 @@
+/* Base */
+.dialog {
+  z-index: 1000;
+  background-color: var(--sui-color-surface);
+  box-shadow: var(--sui-shadow-hover);
+  box-sizing: border-box;
+  overflow: hidden;
+  color: inherit;
+  border: none;
+  border-radius: var(--sui-roundness);
+}
+.dialog::backdrop {
+  background-color: var(--sui-color-scrim);
+}
+
+/* Variants */
+.dialog:where(.popover) {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  border-radius: var(--sui-roundness)
+}
+.dialog:where(.anchor_left):where(.anchor_top) {
+  transform: none;
+}
+.dialog:where(.anchor_left):where(.anchor_bottom) {
+  transform: translateY(-100%);
+}
+.dialog:where(.anchor_right):where(.anchor_top) {
+  transform: translate(-100%, 8px);
+}
+.dialog:where(.anchor_right):where(.anchor_bottom) {
+  transform: translate(-100%, calc(-100% - 8px));
+}
+
+.dialog:where(.modal) {
+  border-radius: calc(var(--sui-roundness) * 1.5);
+}
+.dialog:where(.modal)::backdrop {
+  background-color: var(--sui-color-scrim);
+}

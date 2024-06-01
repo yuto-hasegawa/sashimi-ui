@@ -1,0 +1,27 @@
+/* Base */
+.table {
+  border-collapse: collapse;
+}
+.table thead {
+  border-bottom: 1px solid var(--sui-color-outline-secondary);
+}
+.table th {
+  color: var(--sui-color-neutral-secondary);
+  text-align: left;
+  padding: calc(var(--sui-base-padding) / 3) var(--sui-base-padding);
+  vertical-align: middle;
+  font-weight: inherit;
+}
+.table td {
+  padding: calc(var(--sui-base-padding) * 2 / 3) var(--sui-base-padding);
+  vertical-align: middle;
+}
+.table tbody tr:hover {
+  background-color: var(--sui-color-highlight-secondary);
+}
+
+.table caption {
+  caption-side: bottom;
+  font-size: 0.9em;
+  color: var(--sui-color-neutral-secondary);
+}

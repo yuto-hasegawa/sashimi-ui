@@ -1,0 +1,50 @@
+/* Base */
+.switch:where(input[type="checkbox"]) {
+  appearance: none;
+  position: relative;
+  display: inline flex;
+  align-items: center;
+  vertical-align: middle;
+  width: 48px;
+  height: 32px;
+  background-color: var(--sui-color-neutral-tertiary);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+.switch:where(input[type="checkbox"]):checked {
+  background-color: var(--sui-color-key-primary);
+}
+
+.switch:where(input[type="checkbox"])::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 2px;
+  margin: auto;
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border: 1px solid;
+  border-color: var(--sui-color-outline-primary);
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition: left 150ms ease;
+}
+.switch:where(input[type="checkbox"]):checked::after {
+  left: calc(100% - 29px);
+}
+
+.switch:where(input[type="checkbox"]):where(.error) {
+  border: 1px solid var(--sui-color-error);
+}
+.switch:where(input[type="checkbox"]):where(.error):checked {
+  background-color: var(--sui-color-error);
+}
+
+.switch:where(input[type="checkbox"]):disabled {
+  cursor: default;
+  opacity: 0.4;
+}

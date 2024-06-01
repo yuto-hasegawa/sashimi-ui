@@ -1,0 +1,31 @@
+---
+title: Legend
+layout: ../../components/Layout.astro
+---
+
+import SamplePane from "../../components/SamplePane.astro";
+
+# Helper Text
+
+`.helper-text` makes elements look like a form helper text.
+
+## Applicable Elements
+
+- `p`
+- any other text elements
+
+## Usage
+
+<SamplePane>
+<fieldset class="fieldset">
+<input type="datetime-local" class="input" />
+<p class="helper-text">This is a helper text.</p>
+</fieldset>
+</SamplePane>
+
+
+## Wrapper component
+
+React component `HelperText` is available.  
+It shows an error message when `error` is specified.  
+Also it works well with [`Fieldset`](/components/fieldset).
