@@ -65,12 +65,9 @@ export default function FieldsetUsage() {
 				</HelperText>
 			</Fieldset>
 
-			<Fieldset
-				className="fieldset"
-				error={drink === "milk" ? "error" : undefined}
-			>
+			<Fieldset error={drink === "milk" ? "error" : undefined}>
 				<Legend>This is a {"<legend/>"} element</Legend>
-				<Label className="label">
+				<Label>
 					<Input
 						className="radio"
 						type="radio"
@@ -81,7 +78,7 @@ export default function FieldsetUsage() {
 					/>
 					Tea is the best match with sashimi.
 				</Label>
-				<Label className="label">
+				<Label>
 					<Input
 						className="radio"
 						type="radio"
@@ -92,7 +89,7 @@ export default function FieldsetUsage() {
 					/>
 					Beer is also great combination.
 				</Label>
-				<Label className="label">
+				<Label>
 					<Input
 						className="radio"
 						type="radio"
@@ -105,20 +102,20 @@ export default function FieldsetUsage() {
 				</Label>
 			</Fieldset>
 
-			<Fieldset className="fieldset" disabled>
+			<Fieldset disabled>
 				<Legend>Disabled checkboxes</Legend>
-				<Label className="label">
+				<Label>
 					<Input className="checkbox" type="checkbox" defaultChecked />
 					{"<fieldset/>"} propagates the disabled attribute
 				</Label>
-				<Label className="label">
+				<Label>
 					<Input className="checkbox" type="checkbox" />
 					to its children by default.
 				</Label>
 			</Fieldset>
 
-			<Fieldset className="fieldset" error={sabi ? undefined : "error"}>
-				<Label className="label">
+			<Fieldset error={sabi ? undefined : "error"}>
+				<Label>
 					Would you like wasabi in sushi?
 					<Input
 						className="switch"
