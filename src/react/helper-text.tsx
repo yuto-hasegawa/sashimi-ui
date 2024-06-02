@@ -2,15 +2,18 @@
 
 import React, { useContext } from "react";
 import { FieldsetContext } from "./fieldset";
+import { prefix } from "./utils/prefix";
+import { cn } from "./utils/cn";
 
 export interface HelperTextProps {
 	error?: string;
+	classNamePrefix?: string;
 }
 
 const HelperText = React.forwardRef<
 	HTMLParagraphElement,
-	HelperTextProps & JSX.IntrinsicElements["p"]
->(({ error, children, className, ...rest }, ref) => {
+	HelperTextProps & React.ComponentPropsWithoutRef<"p">
+>(({ error, children, className, classNamePrefix, ...rest }, ref) => {
 	const ctx = useContext(FieldsetContext);
 	const err = error ?? ctx.error;
 
@@ -18,9 +21,11 @@ const HelperText = React.forwardRef<
 		<p
 			{...rest}
 			ref={ref}
-			className={["helper-text", err ? "error" : "", className]
-				.filter(Boolean)
-				.join(" ")}
+			className={cn(
+				prefix(classNamePrefix, "helper-text"),
+				err ? prefix(classNamePrefix, "error") : "",
+				className,
+			)}
 		>
 			{err || children}
 		</p>

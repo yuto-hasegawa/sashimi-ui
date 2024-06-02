@@ -2,15 +2,18 @@
 
 import React, { useContext } from "react";
 import { FieldsetContext } from "./fieldset";
+import { prefix } from "./utils/prefix";
+import { cn } from "./utils/cn";
 
 export interface LegendProps {
 	error?: string;
+	classNamePrefix?: string;
 }
 
 const Legend = React.forwardRef<
 	HTMLLegendElement,
-	LegendProps & JSX.IntrinsicElements["legend"]
->(({ error, children, className, ...rest }, ref) => {
+	LegendProps & React.ComponentPropsWithoutRef<"legend">
+>(({ error, children, className, classNamePrefix, ...rest }, ref) => {
 	const ctx = useContext(FieldsetContext);
 	const err = error ?? ctx.error;
 
@@ -18,9 +21,11 @@ const Legend = React.forwardRef<
 		<legend
 			{...rest}
 			ref={ref}
-			className={["legend", err ? "error" : "", className]
-				.filter(Boolean)
-				.join(" ")}
+			className={cn(
+				prefix(classNamePrefix, "legend"),
+				err ? prefix(classNamePrefix, "error") : "",
+				className,
+			)}
 		>
 			{children}
 		</legend>

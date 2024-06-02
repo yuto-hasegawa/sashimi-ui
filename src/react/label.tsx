@@ -2,15 +2,18 @@
 
 import React, { useContext } from "react";
 import { FieldsetContext } from "./fieldset";
+import { prefix } from "./utils/prefix";
+import { cn } from "./utils/cn";
 
 export interface LabelProps {
 	error?: string;
+	classNamePrefix?: string;
 }
 
 const Label = React.forwardRef<
 	HTMLLabelElement,
-	LabelProps & JSX.IntrinsicElements["label"]
->(({ error, children, className, ...rest }, ref) => {
+	LabelProps & React.ComponentPropsWithoutRef<"label">
+>(({ error, children, className, classNamePrefix, ...rest }, ref) => {
 	const ctx = useContext(FieldsetContext);
 	const err = error ?? ctx.error;
 
@@ -18,9 +21,11 @@ const Label = React.forwardRef<
 		<label
 			{...rest}
 			ref={ref}
-			className={["label", err ? "error" : "", className]
-				.filter(Boolean)
-				.join(" ")}
+			className={cn(
+				prefix(classNamePrefix, "label"),
+				err ? prefix(classNamePrefix, "error") : "",
+				className,
+			)}
 		>
 			{children}
 		</label>

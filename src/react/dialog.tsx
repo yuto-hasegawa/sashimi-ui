@@ -8,6 +8,8 @@ import React, {
 	useCallback,
 } from "react";
 import { createPortal } from "react-dom";
+import { prefix } from "./utils/prefix";
+import { cn } from "./utils/cn";
 
 export type DialogProps = ModalDialogProps | PopoverDialogProps;
 
@@ -15,16 +17,18 @@ interface ModalDialogProps {
 	mode: "modal";
 	onClickAway?: () => void;
 	onCancel?: () => void;
+	classNamePrefix?: string;
 }
 interface PopoverDialogProps {
 	mode: "popover";
 	anchor: HTMLElement;
 	onClickAway?: () => void;
+	classNamePrefix?: string;
 }
 
 const Dialog = React.forwardRef<
 	HTMLDialogElement,
-	DialogProps & JSX.IntrinsicElements["dialog"]
+	DialogProps & React.ComponentPropsWithoutRef<"dialog">
 >((props, ref) => {
 	switch (props.mode) {
 		case "modal":
@@ -39,10 +43,19 @@ Dialog.displayName = "Dialog";
 /* Modal */
 const ModalDialog = React.forwardRef<
 	HTMLDialogElement,
-	ModalDialogProps & JSX.IntrinsicElements["dialog"]
+	ModalDialogProps & React.ComponentPropsWithoutRef<"dialog">
 >(
 	(
-		{ onClickAway, onCancel, children, open, className, style, ...rest },
+		{
+			onClickAway,
+			onCancel,
+			children,
+			open,
+			className,
+			classNamePrefix,
+			style,
+			...rest
+		},
 		ref,
 	) => {
 		const innerRef = useRef<HTMLDialogElement>(null);
@@ -101,7 +114,13 @@ const ModalDialog = React.forwardRef<
 					<dialog
 						{...rest}
 						ref={innerRef}
-						className={["dialog", "modal", className].filter(Boolean).join(" ")}
+						className={[
+							prefix(classNamePrefix, "dialog"),
+							prefix(classNamePrefix, "modal"),
+							className,
+						]
+							.filter(Boolean)
+							.join(" ")}
 						onClick={onClick}
 					>
 						{open && children}
@@ -118,94 +137,112 @@ ModalDialog.displayName = "ModalDialog";
 /* Popover */
 const PopoverDialog = React.forwardRef<
 	HTMLDialogElement,
-	PopoverDialogProps & JSX.IntrinsicElements["dialog"]
->(({ anchor, onClickAway, children, open, className, style, ...rest }, ref) => {
-	const innerRef = useRef<HTMLDialogElement>(null);
-	const [isReady, setIsReady] = useState(false);
-	const [x, setX] = useState<number | null>(null);
-	const [y, setY] = useState<number | null>(null);
-	const [xAnchor, setXAnchor] = useState<"left" | "right">("left");
-	const [yAnchor, setYAnchor] = useState<"top" | "bottom">("top");
+	PopoverDialogProps & React.ComponentPropsWithoutRef<"dialog">
+>(
+	(
+		{
+			anchor,
+			onClickAway,
+			children,
+			open,
+			className,
+			classNamePrefix,
+			style,
+			...rest
+		},
+		ref,
+	) => {
+		const innerRef = useRef<HTMLDialogElement>(null);
+		const [isReady, setIsReady] = useState(false);
+		const [x, setX] = useState<number | null>(null);
+		const [y, setY] = useState<number | null>(null);
+		const [xAnchor, setXAnchor] = useState<"left" | "right">("left");
+		const [yAnchor, setYAnchor] = useState<"top" | "bottom">("top");
 
-	useImperativeHandle(ref, () => innerRef.current as HTMLDialogElement);
+		useImperativeHandle(ref, () => innerRef.current as HTMLDialogElement);
 
-	useEffect(() => {
-		// workaround:
-		// make this comopnent rendered only on client side
-		// and also avoid SSR mismatch
-		setIsReady(true);
-	}, []);
+		useEffect(() => {
+			// workaround:
+			// make this comopnent rendered only on client side
+			// and also avoid SSR mismatch
+			setIsReady(true);
+		}, []);
 
-	useEffect(() => {
-		if (!innerRef.current || !isReady) return;
+		useEffect(() => {
+			if (!innerRef.current || !isReady) return;
 
-		if (open) {
-			const { left, right, top, bottom, width, height } =
-				anchor.getBoundingClientRect();
-			const posX =
-				(left + right) / 2 > window.innerWidth / 2 ? "right" : "left";
-			const posY =
-				(top + bottom) / 2 > window.innerHeight / 2 ? "bottom" : "top";
-			setX(posX === "right" ? right : left);
-			setY(posY === "top" ? bottom : top);
-			setXAnchor(posX === "right" ? "right" : "left");
-			setYAnchor(posY === "bottom" ? "bottom" : "top");
+			if (open) {
+				const { left, right, top, bottom, width, height } =
+					anchor.getBoundingClientRect();
+				const posX =
+					(left + right) / 2 > window.innerWidth / 2 ? "right" : "left";
+				const posY =
+					(top + bottom) / 2 > window.innerHeight / 2 ? "bottom" : "top";
+				setX(posX === "right" ? right : left);
+				setY(posY === "top" ? bottom : top);
+				setXAnchor(posX === "right" ? "right" : "left");
+				setYAnchor(posY === "bottom" ? "bottom" : "top");
 
-			innerRef.current.show();
-			innerRef.current.focus();
-		} else {
-			innerRef.current.close();
-		}
-	}, [open, anchor, isReady]);
-
-	useEffect(() => {
-		if (!open) return;
-		const clickAwayHandler = () => {
-			if (innerRef.current?.contains(document.activeElement)) {
-				return; // ignore click inside dialog
+				innerRef.current.show();
+				innerRef.current.focus();
+			} else {
+				innerRef.current.close();
 			}
-			onClickAway?.();
-		};
-		// workaround:
-		// if we add an event listener immediately, it will be triggered by the opening click
-		setTimeout(() => {
-			document.addEventListener("click", clickAwayHandler);
-		}, 0);
-		return () => {
-			document.removeEventListener("click", clickAwayHandler);
-		};
-	}, [open, onClickAway]);
+		}, [open, anchor, isReady]);
 
-	if (!isReady) return null;
+		useEffect(() => {
+			if (!open) return;
+			const clickAwayHandler = () => {
+				if (innerRef.current?.contains(document.activeElement)) {
+					return; // ignore click inside dialog
+				}
+				onClickAway?.();
+			};
+			// workaround:
+			// if we add an event listener immediately, it will be triggered by the opening click
+			setTimeout(() => {
+				document.addEventListener("click", clickAwayHandler);
+			}, 0);
+			return () => {
+				document.removeEventListener("click", clickAwayHandler);
+			};
+		}, [open, onClickAway]);
 
-	return (
-		<>
-			{createPortal(
-				<dialog
-					{...rest}
-					ref={innerRef}
-					className={[
-						"dialog",
-						"popover",
-						xAnchor === "right" ? "anchor_right" : "anchor_left",
-						yAnchor === "top" ? "anchor_top" : "anchor_bottom",
-						className,
-					]
-						.filter(Boolean)
-						.join(" ")}
-					style={
-						x !== null && y !== null
-							? { ...style, top: y, left: x }
-							: { ...style, display: "none" }
-					}
-				>
-					{open && children}
-				</dialog>,
-				document.body,
-			)}
-		</>
-	);
-});
+		if (!isReady) return null;
+
+		return (
+			<>
+				{createPortal(
+					<dialog
+						{...rest}
+						ref={innerRef}
+						className={cn(
+							prefix(classNamePrefix, "dialog"),
+							prefix(classNamePrefix, "popover"),
+							prefix(
+								classNamePrefix,
+								xAnchor === "right" ? "anchor_right" : "anchor_left",
+							),
+							prefix(
+								classNamePrefix,
+								yAnchor === "top" ? "anchor_top" : "anchor_bottom",
+							),
+							className,
+						)}
+						style={
+							x !== null && y !== null
+								? { ...style, top: y, left: x }
+								: { ...style, display: "none" }
+						}
+					>
+						{open && children}
+					</dialog>,
+					document.body,
+				)}
+			</>
+		);
+	},
+);
 
 PopoverDialog.displayName = "PopoverDialog";
 

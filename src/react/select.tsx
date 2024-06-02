@@ -2,15 +2,18 @@
 
 import React, { useContext } from "react";
 import { FieldsetContext } from "./fieldset";
+import { prefix } from "./utils/prefix";
+import { cn } from "./utils/cn";
 
 export interface SelectProps {
 	error?: string;
+	classNamePrefix?: string;
 }
 
 const Select = React.forwardRef<
 	HTMLSelectElement,
-	SelectProps & JSX.IntrinsicElements["select"]
->(({ error, children, className, ...rest }, ref) => {
+	SelectProps & React.ComponentPropsWithoutRef<"select">
+>(({ error, children, className, classNamePrefix, ...rest }, ref) => {
 	const ctx = useContext(FieldsetContext);
 	const err = error ?? ctx.error;
 
@@ -18,9 +21,11 @@ const Select = React.forwardRef<
 		<select
 			{...rest}
 			ref={ref}
-			className={["select", err ? "error" : "", className]
-				.filter(Boolean)
-				.join(" ")}
+			className={cn(
+				prefix(classNamePrefix, "select"),
+				err ? prefix(classNamePrefix, "error") : "",
+				className,
+			)}
 		>
 			{children}
 		</select>

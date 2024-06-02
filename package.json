@@ -34,6 +34,7 @@
 		"./*.css": "./dist/css/*.css",
 		"./react/*": "./dist/react/*",
 		"./react": "./dist/react/index.js",
+		"./react/sui-prefixed": "./dist/react/sui-prefixed/index.jsx",
 		"./package.json": "./package.json"
 	}
 }

@@ -2,15 +2,18 @@
 
 import React, { useContext } from "react";
 import { FieldsetContext } from "./fieldset";
+import { prefix } from "./utils/prefix";
+import { cn } from "./utils/cn";
 
 export interface TextareaProps {
 	error?: string;
+	classNamePrefix?: string;
 }
 
 const Textarea = React.forwardRef<
 	HTMLTextAreaElement,
-	TextareaProps & JSX.IntrinsicElements["textarea"]
->(({ error, children, className, ...rest }, ref) => {
+	TextareaProps & React.ComponentPropsWithoutRef<"textarea">
+>(({ error, children, className, classNamePrefix, ...rest }, ref) => {
 	const ctx = useContext(FieldsetContext);
 	const err = error ?? ctx.error;
 
@@ -18,9 +21,11 @@ const Textarea = React.forwardRef<
 		<textarea
 			{...rest}
 			ref={ref}
-			className={["textarea", err ? "error" : "", className]
-				.filter(Boolean)
-				.join(" ")}
+			className={cn(
+				prefix(classNamePrefix, "textarea"),
+				err ? prefix(classNamePrefix, "error") : "",
+				className,
+			)}
 		>
 			{children}
 		</textarea>
