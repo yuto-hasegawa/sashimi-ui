@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { prefix } from "./utils/prefix";
-import { cn } from "./utils/cn";
+import { prefix } from "./utils/prefix.js";
+import { cn } from "./utils/cn.js";
 
 export const FieldsetContext = React.createContext<{ error?: string }>({});
 

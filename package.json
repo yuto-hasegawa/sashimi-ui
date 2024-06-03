@@ -1,6 +1,6 @@
 {
 	"name": "sashimi-ui",
-	"version": "0.0.2",
+	"version": "0.0.5",
 	"description": "UI library which brings out the best of the ingredients(HTML)",
 	"author": "Yuto Hasegawa <hsgw@qstol.info>",
 	"license": "MIT",
@@ -13,6 +13,7 @@
 	"exports": {
 		"./bundle.css": "./dist/css/bundle.css",
 		"./sui-bundle.css": "./dist/css/sui-bundle.css",
+		"./default.theme.css": "./dist/css/default.theme.css",
 		"./react": "./dist/react/index.js",
 		"./react/sui-prefixed": "./dist/react/sui-prefixed/index.jsx",
 		"./react/*": "./dist/react/*",

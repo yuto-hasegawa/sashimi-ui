@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useContext } from "react";
-import { FieldsetContext } from "./Fieldset";
-import { prefix } from "./utils/prefix";
-import { cn } from "./utils/cn";
+import { FieldsetContext } from "./Fieldset.js";
+import { prefix } from "./utils/prefix.js";
+import { cn } from "./utils/cn.js";
 
 export interface InputProps {
 	error?: string;

@@ -8,8 +8,8 @@ import React, {
 	useCallback,
 } from "react";
 import { createPortal } from "react-dom";
-import { prefix } from "./utils/prefix";
-import { cn } from "./utils/cn";
+import { prefix } from "./utils/prefix.js";
+import { cn } from "./utils/cn.js";
 
 export type DialogProps = ModalDialogProps | PopoverDialogProps;
 
