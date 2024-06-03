@@ -1,12 +1,12 @@
 import { forwardRef } from "react";
-import BaseDialog, { type DialogProps } from "../dialog";
-import BaseFieldset, { type FieldsetProps } from "../fieldset";
-import BaseHelperText, { type HelperTextProps } from "../helper-text";
-import BaseInput, { type InputProps } from "../input";
-import BaseLabel, { type LabelProps } from "../label";
-import BaseLegend, { type LegendProps } from "../legend";
-import BaseSelect, { type SelectProps } from "../select";
-import BaseTextarea, { type TextareaProps } from "../textarea";
+import BaseDialog, { type DialogProps } from "../Dialog";
+import BaseFieldset, { type FieldsetProps } from "../Fieldset";
+import BaseHelperText, { type HelperTextProps } from "../HelperText";
+import BaseInput, { type InputProps } from "../Input";
+import BaseLabel, { type LabelProps } from "../Label";
+import BaseLegend, { type LegendProps } from "../Legend";
+import BaseSelect, { type SelectProps } from "../Select";
+import BaseTextarea, { type TextareaProps } from "../Textarea";
 
 export const Dialog = forwardRef<
 	HTMLDialogElement,

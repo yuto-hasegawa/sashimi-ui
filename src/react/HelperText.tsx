@@ -1,37 +1,37 @@
 "use client";
 
 import React, { useContext } from "react";
-import { FieldsetContext } from "./fieldset";
+import { FieldsetContext } from "./Fieldset";
 import { prefix } from "./utils/prefix";
 import { cn } from "./utils/cn";
 
-export interface LabelProps {
+export interface HelperTextProps {
 	error?: string;
 	classNamePrefix?: string;
 }
 
-const Label = React.forwardRef<
-	HTMLLabelElement,
-	LabelProps & React.ComponentPropsWithoutRef<"label">
+const HelperText = React.forwardRef<
+	HTMLParagraphElement,
+	HelperTextProps & React.ComponentPropsWithoutRef<"p">
 >(({ error, children, className, classNamePrefix, ...rest }, ref) => {
 	const ctx = useContext(FieldsetContext);
 	const err = error ?? ctx.error;
 
 	return (
-		<label
+		<p
 			{...rest}
 			ref={ref}
 			className={cn(
-				prefix(classNamePrefix, "label"),
+				prefix(classNamePrefix, "helper-text"),
 				err ? prefix(classNamePrefix, "error") : "",
 				className,
 			)}
 		>
-			{children}
-		</label>
+			{err || children}
+		</p>
 	);
 });
 
-Label.displayName = "Input";
+HelperText.displayName = "HelperText";
 
-export default Label;
+export default HelperText;

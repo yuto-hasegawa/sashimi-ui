@@ -1,37 +1,37 @@
 "use client";
 
 import React, { useContext } from "react";
-import { FieldsetContext } from "./fieldset";
+import { FieldsetContext } from "./Fieldset";
 import { prefix } from "./utils/prefix";
 import { cn } from "./utils/cn";
 
-export interface LegendProps {
+export interface InputProps {
 	error?: string;
 	classNamePrefix?: string;
 }
 
-const Legend = React.forwardRef<
-	HTMLLegendElement,
-	LegendProps & React.ComponentPropsWithoutRef<"legend">
+const Input = React.forwardRef<
+	HTMLInputElement,
+	InputProps & React.ComponentPropsWithoutRef<"input">
 >(({ error, children, className, classNamePrefix, ...rest }, ref) => {
 	const ctx = useContext(FieldsetContext);
 	const err = error ?? ctx.error;
 
 	return (
-		<legend
+		<input
 			{...rest}
 			ref={ref}
 			className={cn(
-				prefix(classNamePrefix, "legend"),
+				prefix(classNamePrefix, "input"),
 				err ? prefix(classNamePrefix, "error") : "",
 				className,
 			)}
 		>
 			{children}
-		</legend>
+		</input>
 	);
 });
 
-Legend.displayName = "Legend";
+Input.displayName = "Input";
 
-export default Legend;
+export default Input;

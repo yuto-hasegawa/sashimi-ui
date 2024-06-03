@@ -1,37 +1,37 @@
 "use client";
 
 import React, { useContext } from "react";
-import { FieldsetContext } from "./fieldset";
+import { FieldsetContext } from "./Fieldset";
 import { prefix } from "./utils/prefix";
 import { cn } from "./utils/cn";
 
-export interface TextareaProps {
+export interface LabelProps {
 	error?: string;
 	classNamePrefix?: string;
 }
 
-const Textarea = React.forwardRef<
-	HTMLTextAreaElement,
-	TextareaProps & React.ComponentPropsWithoutRef<"textarea">
+const Label = React.forwardRef<
+	HTMLLabelElement,
+	LabelProps & React.ComponentPropsWithoutRef<"label">
 >(({ error, children, className, classNamePrefix, ...rest }, ref) => {
 	const ctx = useContext(FieldsetContext);
 	const err = error ?? ctx.error;
 
 	return (
-		<textarea
+		<label
 			{...rest}
 			ref={ref}
 			className={cn(
-				prefix(classNamePrefix, "textarea"),
+				prefix(classNamePrefix, "label"),
 				err ? prefix(classNamePrefix, "error") : "",
 				className,
 			)}
 		>
 			{children}
-		</textarea>
+		</label>
 	);
 });
 
-Textarea.displayName = "Textarea";
+Label.displayName = "Input";
 
-export default Textarea;
+export default Label;

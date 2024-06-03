@@ -1,37 +1,37 @@
 "use client";
 
 import React, { useContext } from "react";
-import { FieldsetContext } from "./fieldset";
+import { FieldsetContext } from "./Fieldset";
 import { prefix } from "./utils/prefix";
 import { cn } from "./utils/cn";
 
-export interface SelectProps {
+export interface LegendProps {
 	error?: string;
 	classNamePrefix?: string;
 }
 
-const Select = React.forwardRef<
-	HTMLSelectElement,
-	SelectProps & React.ComponentPropsWithoutRef<"select">
+const Legend = React.forwardRef<
+	HTMLLegendElement,
+	LegendProps & React.ComponentPropsWithoutRef<"legend">
 >(({ error, children, className, classNamePrefix, ...rest }, ref) => {
 	const ctx = useContext(FieldsetContext);
 	const err = error ?? ctx.error;
 
 	return (
-		<select
+		<legend
 			{...rest}
 			ref={ref}
 			className={cn(
-				prefix(classNamePrefix, "select"),
+				prefix(classNamePrefix, "legend"),
 				err ? prefix(classNamePrefix, "error") : "",
 				className,
 			)}
 		>
 			{children}
-		</select>
+		</legend>
 	);
 });
 
-Select.displayName = "Select";
+Legend.displayName = "Legend";
 
-export default Select;
+export default Legend;

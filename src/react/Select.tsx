@@ -1,37 +1,37 @@
 "use client";
 
 import React, { useContext } from "react";
-import { FieldsetContext } from "./fieldset";
+import { FieldsetContext } from "./Fieldset";
 import { prefix } from "./utils/prefix";
 import { cn } from "./utils/cn";
 
-export interface InputProps {
+export interface SelectProps {
 	error?: string;
 	classNamePrefix?: string;
 }
 
-const Input = React.forwardRef<
-	HTMLInputElement,
-	InputProps & React.ComponentPropsWithoutRef<"input">
+const Select = React.forwardRef<
+	HTMLSelectElement,
+	SelectProps & React.ComponentPropsWithoutRef<"select">
 >(({ error, children, className, classNamePrefix, ...rest }, ref) => {
 	const ctx = useContext(FieldsetContext);
 	const err = error ?? ctx.error;
 
 	return (
-		<input
+		<select
 			{...rest}
 			ref={ref}
 			className={cn(
-				prefix(classNamePrefix, "input"),
+				prefix(classNamePrefix, "select"),
 				err ? prefix(classNamePrefix, "error") : "",
 				className,
 			)}
 		>
 			{children}
-		</input>
+		</select>
 	);
 });
 
-Input.displayName = "Input";
+Select.displayName = "Select";
 
-export default Input;
+export default Select;

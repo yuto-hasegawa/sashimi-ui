@@ -1,37 +1,37 @@
 "use client";
 
 import React, { useContext } from "react";
-import { FieldsetContext } from "./fieldset";
+import { FieldsetContext } from "./Fieldset";
 import { prefix } from "./utils/prefix";
 import { cn } from "./utils/cn";
 
-export interface HelperTextProps {
+export interface TextareaProps {
 	error?: string;
 	classNamePrefix?: string;
 }
 
-const HelperText = React.forwardRef<
-	HTMLParagraphElement,
-	HelperTextProps & React.ComponentPropsWithoutRef<"p">
+const Textarea = React.forwardRef<
+	HTMLTextAreaElement,
+	TextareaProps & React.ComponentPropsWithoutRef<"textarea">
 >(({ error, children, className, classNamePrefix, ...rest }, ref) => {
 	const ctx = useContext(FieldsetContext);
 	const err = error ?? ctx.error;
 
 	return (
-		<p
+		<textarea
 			{...rest}
 			ref={ref}
 			className={cn(
-				prefix(classNamePrefix, "helper-text"),
+				prefix(classNamePrefix, "textarea"),
 				err ? prefix(classNamePrefix, "error") : "",
 				className,
 			)}
 		>
-			{err || children}
-		</p>
+			{children}
+		</textarea>
 	);
 });
 
-HelperText.displayName = "HelperText";
+Textarea.displayName = "Textarea";
 
-export default HelperText;
+export default Textarea;

@@ -42,19 +42,4 @@
   --sui-checkbox-size: 20px;
   --sui-radio-size: 20px;
   --sui-label-gap: 4px;
-  
-
-  /* Not adjusted yet */
-  --color-error: var(--color-red);
-
-  --shadow-shallow: 0px 2px 12px rgba(0, 0, 0, 0.02);
-  --shadow-card: 0px 4px 12px rgba(24, 93, 95, 0.06);
-
-  --padding-sp: 20px;
-  --padding-pc: 64px;
-  --width-min: 320px;
-  --width-max: 1400px;
-
-  --header-height: 80px;
-  --rest-height: calc(100vh - var(--header-height));
 }

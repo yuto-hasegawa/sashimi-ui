@@ -1,23 +1,23 @@
-export { default as Dialog } from "./dialog";
-export * from "./dialog";
+export { default as Dialog } from "./Dialog";
+export * from "./Dialog";
 
-export { default as Fieldset } from "./fieldset";
-export * from "./fieldset";
+export { default as Fieldset } from "./Fieldset";
+export * from "./Fieldset";
 
-export { default as HelperText } from "./helper-text";
-export * from "./helper-text";
+export { default as HelperText } from "./HelperText";
+export * from "./HelperText";
 
-export { default as Input } from "./input";
-export * from "./input";
+export { default as Input } from "./Input";
+export * from "./Input";
 
-export { default as Label } from "./label";
-export * from "./label";
+export { default as Label } from "./Label";
+export * from "./Label";
 
-export { default as Legend } from "./legend";
-export * from "./legend";
+export { default as Legend } from "./Legend";
+export * from "./Legend";
 
-export { default as Select } from "./select";
-export * from "./select";
+export { default as Select } from "./Select";
+export * from "./Select";
 
-export { default as Textarea } from "./textarea";
-export * from "./textarea";
+export { default as Textarea } from "./Textarea";
+export * from "./Textarea";
