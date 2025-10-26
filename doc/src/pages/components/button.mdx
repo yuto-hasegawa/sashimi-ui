@@ -48,34 +48,34 @@ Buttons have variants based on their roles.
 `.icon` suits well with `.button`.
 
 <SamplePane>
-  <button class="button"><img class="icon" src="/home.svg" />Home</button>
-  <button class="button secondary">Edit<img class="icon" src="/edit.svg" /></button>
-  <button class="button tertiary"><img class="icon" src="/copy.svg" alt="Copy" /></button>
+  <button class="button"><svg class="icon"><use href="/home.svg" /></svg>Home</button>
+  <button class="button secondary">Edit<svg class="icon"><use href="/edit.svg" /></svg></button>
+  <button class="button tertiary"><svg class="icon"><use href="/copy.svg" /></svg></button>
 </SamplePane>
 ```html
 <button class="button">
-  <img class="icon" src="/home.svg" />
+  <svg class="icon"><use href="/home.svg" /></svg>
   Home
 </button>
 <button class="button secondary">
   Edit
-  <img class="icon" src="/edit.svg" />
+  <svg class="icon"><use href="/edit.svg" /></svg>
 </button>
 <button class="button tertiary">
-  <img class="icon" src="/copy.svg" alt="Copy" />
+  <svg class="icon"><use href="/copy.svg" /></svg>
 </button>
 ```
 
-## State
+## States
 
 <SamplePane>
-  <button class="button" disabled><img class="icon" src="/delete.svg"/>Delete</button>
+  <button class="button" disabled><svg class="icon"><use href="/delete.svg" /></svg>Delete</button>
   <button class="button secondary" disabled><progress class="progress circular icon" style="color: gray;" />Sending...</button>
 </SamplePane>
 
 ```html
 <button class="button" disabled>
-  <img class="icon" src="/delete.svg"/>
+  <svg class="icon"><use href="/delete.svg" /></svg>
   Delete
 </button>
 <button class="button secondary" disabled>
@@ -90,14 +90,14 @@ There are no pre-defined variants for size and color.
 Write your own CSS and it just works!
 
 <SamplePane>
-  <button class="button my-small">Hello</button>
-  <button class="button my-large">Hello</button>
-  <button class="button my-destructive">Hello</button>
+  <button class="button my-small">Small</button>
+  <button class="button my-large">Large</button>
+  <button class="button my-destructive">Red</button>
 </SamplePane>
 ```html
-<button class="button my-small">Hello</button>
-<button class="button my-large">Hello</button>
-<button class="button my-destructive">Hello</button>
+<button class="button my-small">Small</button>
+<button class="button my-large">Large</button>
+<button class="button my-destructive">Red</button>
 
 <style>
   .button.my-small {

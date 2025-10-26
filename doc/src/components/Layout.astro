@@ -22,9 +22,12 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="layout">
-		<nav>
+		<nav id="navigation">
 			<Sidebar title='menu' body='' href='' />
 		</nav>
+		<button class="menu-button button tertiary" onclick="document.getElementById('navigation').classList.toggle('open');">
+			<svg class="icon"><use href="/menu.svg" /></svg>
+		</button>
 		<main class="main">
 			<slot />
 		</main>
@@ -35,7 +38,33 @@ const { title } = Astro.props;
 		display: grid;
 		grid-template-columns: 220px 1fr;
 	}
+	.menu-button {
+		display: none;
+	}
 	.main {
 		padding: 24px 32px 120px;
+	}
+
+	@media (max-width: 768px) {
+		.layout {
+			display: block;
+		}
+		.menu-button {
+			display: block;
+			position: fixed;
+			top: 16px;
+			right: 16px;
+			z-index: 22;
+		}
+		#navigation {
+			display: none;
+			position: fixed;
+			inset: 0;
+			background-color: var(--sui-color-surface);
+			z-index: 10;
+		}
+		#navigation.open {
+			display: block;
+		}
 	}
 </style>

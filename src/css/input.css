@@ -12,25 +12,25 @@
 .input:where([type="time"]),
 .input:where([type="url"]),
 .input:where([type="week"]) {
-  font: inherit;
-  height: var(--sui-input-base-height);
-  padding: 0 var(--sui-base-padding);
-  box-sizing: border-box;
-  border: 1px solid var(--sui-color-outline-primary);
-  border-radius: var(--sui-roundness);
-  color: var(--sui-color-neutral-primary);
+	font: inherit;
+	height: var(--sui-input-base-height);
+	padding: 0 var(--sui-base-padding);
+	box-sizing: border-box;
+	border: 1px solid var(--sui-color-outline-primary);
+	border-radius: var(--sui-roundness-normal);
+	color: var(--sui-color-neutral-primary);
+	background-color: var(--sui-color-surface);
 }
 
 .input::placeholder {
-  color: var(--sui-color-neutral-secondary);
+	color: var(--sui-color-neutral-secondary);
 }
 
 .input:disabled {
-  background-color: var(--sui-color-disabled-fill);
+	background-color: var(--sui-color-disabled-fill);
 }
 
 /* Variants */
 .input:where(.error) {
-  border-color: var(--sui-color-error);
+	border-color: var(--sui-color-error);
 }
-

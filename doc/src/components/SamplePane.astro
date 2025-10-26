@@ -2,14 +2,16 @@
 import type { CSSProperty } from "astro/types";
 
 interface Props {
+	id?: string;
 	style?: CSSProperty;
+	className?: string;
 	filled?: boolean;
 }
 
-const { style, filled = false } = Astro.props;
+const { id, style, filled = false, className } = Astro.props;
 ---
 
-<div class:list={["wrapper","card", {"filled": filled}]} style={style}>
+<div id={id} class:list={["wrapper","card", {"filled": filled}, className]} style={style}>
   <slot />
 </div>
 
@@ -21,7 +23,13 @@ const { style, filled = false } = Astro.props;
     align-items: center;
     flex-wrap: wrap;
   }
+  @media screen and (max-width: 768px) {
+    .wrapper {
+      justify-content: flex-start;
+    }
+  }
+
   .filled {
-    background: #f7f7f9;
+    background: var(--sui-color-highlight-primary);
   }
 </style>

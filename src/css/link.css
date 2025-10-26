@@ -1,42 +1,42 @@
 /* Resets */
 .link:where(button) {
-  position: relative;
-  font: inherit;
-  border: none;
-  background-color: transparent;
-  padding: 0;
+	position: relative;
+	font: inherit;
+	border: none;
+	background-color: transparent;
+	padding: 0;
 }
 
 /* Base */
 .link {
-  color: var(--sui-color-key-primary);
-  cursor: pointer;
-  text-decoration: underline;
-  display: inline flex;
-  align-items: center;
-  flex-wrap: wrap;
-  text-align: left;
+	color: var(--sui-color-key-primary);
+	cursor: pointer;
+	text-decoration: underline;
+	display: inline flex;
+	align-items: center;
+	flex-wrap: wrap;
+	text-align: left;
 }
 .link:where(:hover) {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 /* Variants */
 .link:where(.seamless) {
-  font: inherit;
-  color: inherit;
+	font: inherit;
+	color: inherit;
 }
 
 .link:where(.passive) {
-  color: var(--sui-color-neutral-secondary);
-  text-decoration: none;
+	color: var(--sui-color-neutral-secondary);
+	text-decoration: none;
 }
 .link:where(.passive):where(:hover) {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 /* Compositions */
 :where(.link) .icon {
-  width: 1.3em;
-  height: 1.3em;
+	width: 1.1em;
+	height: 1.1em;
 }

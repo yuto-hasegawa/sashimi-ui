@@ -1,0 +1,112 @@
+---
+title: Icon
+layout: ../../components/Layout.astro
+---
+
+import SamplePane from "../../components/SamplePane.astro";
+
+# Icon
+
+`.icon` adjusts its own appearance to fit the surrounding context.
+
+## Applicable Elements
+
+- `svg`
+- `img`
+- `picture`
+
+## Basic Usage
+
+`.icon` sits well in text elements such as `<p>` or `<h1>`.  
+It also works seamlessly alongside other sashimi UI classes like [`.button`](/components/button), [`.link`](/components/link) and [`.menu-item`](/components/menu-item).
+
+
+<SamplePane>
+<p style="margin: 0;"><picture class="icon"><source srcset="/saved_white.svg" media="(prefers-color-scheme: dark)"/><img src="/saved_black.svg" alt="" aria-hidden="true"/></picture>Settings have been saved.</p>
+<button class="button"><img class="icon" src="/delete_blue.svg" alt=""/>Delete</button>
+<h2 style="margin: 0;"><svg class="icon" stroke="currentColor"><use href="/diamond.svg" /></svg>Heading with an icon</h2>
+</SamplePane>
+
+```html
+<p>
+  <picture class="icon">
+    <source srcset="/saved_white.svg" media="(prefers-color-scheme: dark)"/>
+    <img src="/saved_black.svg" alt="" aria-hidden="true"/>
+  </picture>
+  Settings have been saved.
+</p>
+
+<button class="button">
+  <img class="icon" src="/delete_blue.svg" alt=""/>
+  Delete
+</button>
+
+<h2>
+  <svg class="icon"><use href="/diamond.svg" /></svg>
+  Heading with an icon
+</h2>
+```
+
+## Tinting Icons
+
+sashimi UI does **NOT** provide a built-in icon recoloring feature.  
+we recommend using SVGs for icon coloring.
+
+Prepare SVGs that have no fixed width/height, and whose fill or stroke are `currentColor`.  
+Then reference them with `<use>` so the icon inherits color from CSS.
+
+```xml
+<!-- icon.svg -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 -960 960 960"
+  fill="currentColor"
+>
+  <path d="..."/>
+</svg>
+```
+
+```html
+<!-- index.html -->
+<button class="button">
+  <svg class="icon">
+    <title>Icon title</title>
+    <use href="/icon.svg" />
+  </svg>
+  Button Text
+</button>
+```
+
+<SamplePane>
+  <button class="button primary">
+    <svg class="icon">
+      <title>Red Icon</title>
+      <use href="/diamond.svg" />
+    </svg>
+    Primary
+  </button>
+  
+  <button class="button secondary">
+    <svg class="icon">
+      <title>Red Icon</title>
+      <use href="/diamond.svg" />
+    </svg>
+    Secondary
+  </button>
+  
+  <button class="button tertiary">
+    <svg class="icon">
+      <title>Red Icon</title>
+      <use href="/diamond.svg" />
+    </svg>
+    Tertiary
+  </button>
+  
+  <button class="button tertiary" style="color: salmon;">
+    <svg class="icon">
+      <title>Red Icon</title>
+      <use href="/diamond.svg" />
+    </svg>
+    Custom color
+  </button>
+</SamplePane>

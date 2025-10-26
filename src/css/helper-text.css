@@ -1,11 +1,12 @@
 /* Base */
 .helper-text {
-  padding: 0;
-  margin: 0;
-  font-size: 0.9em;
-  color: var(--sui-color-neutral-secondary);
+	padding: 4px 0;
+	margin: 0;
+	font-size: 0.9em;
+	line-height: 1.2;
+	color: var(--sui-color-neutral-secondary);
 }
 
 .helper-text:where(.error) {
-  color: var(--sui-color-error);
+	color: var(--sui-color-error);
 }

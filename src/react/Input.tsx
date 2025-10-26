@@ -1,19 +1,23 @@
 "use client";
 
-import React, { useContext } from "react";
+import { type ComponentPropsWithRef, useContext } from "react";
 import { FieldsetContext } from "./Fieldset.js";
-import { prefix } from "./utils/prefix.js";
 import { cn } from "./utils/cn.js";
+import { prefix } from "./utils/prefix.js";
 
 export interface InputProps {
 	error?: string;
 	classNamePrefix?: string;
 }
 
-const Input = React.forwardRef<
-	HTMLInputElement,
-	InputProps & React.ComponentPropsWithoutRef<"input">
->(({ error, children, className, classNamePrefix, ...rest }, ref) => {
+const Input = ({
+	error,
+	children,
+	className,
+	classNamePrefix,
+	ref,
+	...rest
+}: InputProps & ComponentPropsWithRef<"input">) => {
 	const ctx = useContext(FieldsetContext);
 	const err = error ?? ctx.error;
 
@@ -30,7 +34,7 @@ const Input = React.forwardRef<
 			{children}
 		</input>
 	);
-});
+};
 
 Input.displayName = "Input";
 

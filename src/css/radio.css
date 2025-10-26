@@ -1,56 +1,59 @@
 /* Reset */
 .radio:where(input[type="radio"]) {
-  appearance: none;
+	appearance: none;
 }
 
 /* Base */
 .radio {
-  vertical-align: -0.3em;
-  position: relative;
-  width: var(--sui-radio-size);
-  height: var(--sui-radio-size);
-  margin: 0;
-  padding: 0;
-  border: 2px solid var(--sui-color-outline-primary);
-  border-radius: 50%;
-  cursor: pointer;
+	vertical-align: -0.3em;
+	position: relative;
+	min-width: var(--sui-radio-size);
+	width: var(--sui-radio-size);
+	height: var(--sui-radio-size);
+	margin: 0;
+	padding: 0;
+	border: 2px solid var(--sui-color-outline-primary);
+	border-radius: 50%;
+	cursor: pointer;
 }
 .radio:where(:checked) {
-  border-color: var(--sui-color-key-primary);
+	border-color: var(--sui-color-key-primary);
 }
 
 .radio::before {
-  content: "";
-  display: block;
-  position: absolute;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  width: calc(var(--sui-radio-size) * 1 / 3);
-  height: calc(var(--sui-radio-size) * 1 / 3);
-  background-color: var(--sui-color-key-primary);
-  transition: width 120ms ease-out, height 120ms ease-out;
-  opacity: 0;
+	content: "";
+	display: block;
+	position: absolute;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	width: calc(var(--sui-radio-size) * 1 / 3);
+	height: calc(var(--sui-radio-size) * 1 / 3);
+	background-color: var(--sui-color-key-primary);
+	transition:
+		width 120ms ease-out,
+		height 120ms ease-out;
+	opacity: 0;
 }
 .radio:where(:checked)::before {
-  opacity: 1;
-  width: calc(var(--sui-radio-size) * 3 / 5);
-  height: calc(var(--sui-radio-size) * 3 / 5);
+	opacity: 1;
+	width: calc(var(--sui-radio-size) * 3 / 5);
+	height: calc(var(--sui-radio-size) * 3 / 5);
 }
 
 /* State */
 .radio:where(.error) {
-  border-color: var(--sui-color-error);
+	border-color: var(--sui-color-error);
 }
 .radio:where(.error)::before {
-  background-color: var(--sui-color-error);
+	background-color: var(--sui-color-error);
 }
 
 .radio:where(:disabled) {
-  cursor: default;
-  border-color: var(--sui-color-outline-primary);
+	cursor: default;
+	border-color: var(--sui-color-outline-primary);
 }
 .radio:where(:disabled):where(:checked)::before {
-  background-color: var(--sui-color-neutral-secondary);
+	background-color: var(--sui-color-neutral-secondary);
 }

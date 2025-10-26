@@ -1,19 +1,23 @@
 "use client";
 
-import React, { useContext } from "react";
+import { type ComponentPropsWithRef, useContext } from "react";
 import { FieldsetContext } from "./Fieldset.js";
-import { prefix } from "./utils/prefix.js";
 import { cn } from "./utils/cn.js";
+import { prefix } from "./utils/prefix.js";
 
 export interface LegendProps {
 	error?: string;
 	classNamePrefix?: string;
 }
 
-const Legend = React.forwardRef<
-	HTMLLegendElement,
-	LegendProps & React.ComponentPropsWithoutRef<"legend">
->(({ error, children, className, classNamePrefix, ...rest }, ref) => {
+const Legend = ({
+	error,
+	children,
+	className,
+	classNamePrefix,
+	ref,
+	...rest
+}: LegendProps & ComponentPropsWithRef<"legend">) => {
 	const ctx = useContext(FieldsetContext);
 	const err = error ?? ctx.error;
 
@@ -30,7 +34,7 @@ const Legend = React.forwardRef<
 			{children}
 		</legend>
 	);
-});
+};
 
 Legend.displayName = "Legend";
 

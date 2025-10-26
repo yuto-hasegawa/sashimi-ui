@@ -1,19 +1,23 @@
 "use client";
 
-import React, { useContext } from "react";
+import { type ComponentPropsWithRef, useContext } from "react";
 import { FieldsetContext } from "./Fieldset.js";
-import { prefix } from "./utils/prefix.js";
 import { cn } from "./utils/cn.js";
+import { prefix } from "./utils/prefix.js";
 
 export interface TextareaProps {
 	error?: string;
 	classNamePrefix?: string;
 }
 
-const Textarea = React.forwardRef<
-	HTMLTextAreaElement,
-	TextareaProps & React.ComponentPropsWithoutRef<"textarea">
->(({ error, children, className, classNamePrefix, ...rest }, ref) => {
+const Textarea = ({
+	error,
+	children,
+	className,
+	classNamePrefix,
+	ref,
+	...rest
+}: TextareaProps & ComponentPropsWithRef<"textarea">) => {
 	const ctx = useContext(FieldsetContext);
 	const err = error ?? ctx.error;
 
@@ -30,7 +34,7 @@ const Textarea = React.forwardRef<
 			{children}
 		</textarea>
 	);
-});
+};
 
 Textarea.displayName = "Textarea";
 

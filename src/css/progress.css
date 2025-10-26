@@ -1,91 +1,107 @@
 /* Base */
 .progress {
-  position: relative;
-  appearance: none;
-  overflow: hidden;
-  height: 8px;
-  border-radius: 3px;
+	position: relative;
+	appearance: none;
+	overflow: hidden;
+	height: 8px;
+	border-radius: 3px;
 }
 .progress::-webkit-progress-value {
-  background-color: var(--sui-color-key-primary);
+	background-color: var(--sui-color-key-primary);
 }
 .progress::-webkit-progress-bar {
-  background-color: var(--sui-color-key-tertiary);
+	background-color: var(--sui-color-key-tertiary);
 }
 
 /* Variants */
 .progress:where(:not(.circular)):indeterminate::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  animation: sui-indeterminate 1s infinite linear;
-  transform-origin: 0% 50%;
-  background-color: var(--sui-color-key-primary);
+	content: "";
+	position: absolute;
+	inset: 0;
+	animation: sui-indeterminate 1s infinite linear;
+	transform-origin: 0% 50%;
+	background-color: var(--sui-color-key-primary);
 }
 
 .progress:where(.circular) {
-  position: relative;
-  appearance: none;
-  width: 48px;
-  height: 48px;
-  container-type: size;
-  color: var(--sui-color-key-primary)
+	position: relative;
+	appearance: none;
+	width: 48px;
+	height: 48px;
+	container-type: size;
+	color: var(--sui-color-key-primary);
+	overflow: visible;
 }
 .progress:where(.circular)::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 12cqh solid currentColor;
-  border-radius: 50%;
-  background-color: transparent;
-  animation: infinite 1s linear sui-rotate;
-  mask: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBkPSJNMTAwIDBINDBMNTAgNTBMMCA0MFYxMDBIMTAwVjBaIiBmaWxsPSIjRDlEOUQ5Ii8+DQo8L3N2Zz4NCg==");
-/*
+	content: "";
+	position: absolute;
+	inset: 0;
+	border: 12cqh solid currentColor;
+	border-radius: 50%;
+	background-color: transparent;
+	animation: infinite 1s linear sui-rotate;
+	mask: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBkPSJNMTAwIDBINDBMNTAgNTBMMCA0MFYxMDBIMTAwVjBaIiBmaWxsPSIjRDlEOUQ5Ii8+DQo8L3N2Zz4NCg==");
+	/*
 <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M100 0H40L50 50L0 40V100H100V0Z" fill="#D9D9D9"/>
 </svg>
 */
-  mask-size: cover;
+	mask-size: cover;
 }
 
 .progress.circular::-webkit-progress-bar {
-  background-color: transparent;
+	background-color: transparent;
 }
 
 .progress.skeleton {
-  width: 100%;
-  height: 240px;
-  position: relative;
-  appearance: none;
-  overflow: hidden;
-  border-radius: 6px;
+	width: 100%;
+	height: 240px;
+	position: relative;
+	appearance: none;
+	overflow: hidden;
+	border-radius: 6px;
 }
 .progress.skeleton:indeterminate::before {
-  animation: sui-indeterminate 1s infinite linear;
-  transform-origin: 0% 50%;
-  background: linear-gradient(0.3turn, #95979900, #e6e7e9, #95979900);
+	animation: sui-skeleton 1s infinite linear;
+	width: 200%;
+	transform-origin: 0% 50%;
+	background: linear-gradient(
+		0.28turn,
+		transparent 20%,
+		var(--sui-color-highlight-secondary) 50%,
+		transparent 80%
+	);
 }
 .progress.skeleton::-webkit-progress-bar {
-  background-color: var(--color-background);
+	background-color: var(--color-background);
 }
 
 @keyframes sui-rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 @keyframes sui-indeterminate {
-  0% {
-    transform: translateX(0) scaleX(0);
-  }
-  40% {
-    transform: translateX(0) scaleX(0.4);
-  }
-  100% {
-    transform: translateX(100%) scaleX(0.5);
-  }
+	0% {
+		transform: translateX(0) scaleX(0);
+	}
+	40% {
+		transform: translateX(0) scaleX(0.4);
+	}
+	100% {
+		transform: translateX(100%) scaleX(0.5);
+	}
+}
+
+@keyframes sui-skeleton {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(100%);
+	}
 }

@@ -27,7 +27,7 @@ import SamplePane from "../../components/SamplePane.astro";
 <input class="input" type="datetime-local" />
 ```
 
-## State
+## States
 
 <SamplePane>
   <input class="input error" type="text" placeholder="Error" />
@@ -40,10 +40,12 @@ import SamplePane from "../../components/SamplePane.astro";
 ```
 
 
-## Wrapper component
+## React component
 
 React component `Input` is available.  
-It works well with [`Fieldset`](/components/fieldset).
+It inherits the error property from a [`Fieldset`](/components/fieldset) component and automatically applies the error style.  
+  
+※ The disabled state is automatically inherited through the native HTML feature.
 
 ## Q&A
 

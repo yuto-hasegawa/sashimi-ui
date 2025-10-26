@@ -1,0 +1,39 @@
+---
+interface Props {
+	style?: string;
+}
+
+const { style } = Astro.props;
+---
+
+<div class="card" style={`${style}; display: flex; flex-direction: column;`}>
+  <p>Sliced salmon</p>
+  <dl class="key-value">
+    <dt>Origin</dt>
+    <dd>Hokkaido</dd>
+    <dt>Weight</dt>
+    <dd>120g</dd>
+    <dt>Price</dt>
+    <dd>¥980</dd>
+  </dl>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-end;">
+    <dialog class="dialog" id="dialog-element">
+      <dl class="key-value">
+        <dt>Best Before</dt>
+        <dd>2025-11-30</dd>
+        <dt>Processor</dt>
+        <dd>Tokyo Foods Co.</dd>
+        <dt>Recycle</dt>
+        <dd>Plastic (PET)</dd>
+      </dl>
+      <form method="dialog" style="margin-top: 16px;"><button class="button shy" style="width: 100%;">Dismiss</button></form>
+    </dialog>
+    <button class="button secondary" style="width: 100%;" onclick="document.getElementById('dialog-element').showModal()">
+      Open Dialog
+      <svg class="icon">
+        <title>Info</title>
+        <use href="/info.svg" />
+      </svg>
+    </button>
+  </div>
+</div>

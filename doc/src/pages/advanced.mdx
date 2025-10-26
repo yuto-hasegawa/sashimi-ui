@@ -1,0 +1,39 @@
+---
+title: Hello, World
+layout: ../components/Layout.astro
+---
+import { Code } from "astro:components";
+import SamplePane from "../components/SamplePane.astro";
+import DialogUsagePopover from "./components/dialog_usage_popover"
+
+# Advanced
+
+## React components
+
+sashimi UI is built around plain HTML by design.  
+However, if you are using React, you can take advantage of dedicated components to make the most of it.  
+  
+sashimi UI React components add **useful behaviors** to standard HTML elements.  
+They only enhance functionality — **no extra markup or wrapper elements** are introduced.  
+
+<SamplePane >
+  <DialogUsagePopover client:only="react"/>
+</SamplePane>
+
+```jsx
+<button ref={buttonRef} className="button" type="button" onClick={() => setOpen(true)}>
+  Menu
+</button>
+<Dialog mode="popover" open={open} anchor={buttonRef.current} onClickAway={() => { setOpen(false); }}>
+  <ul style={{ listStyle: "none", padding: 0 }}>
+    {/* Menu items */}    
+  </ul>
+</Dialog>
+```
+
+For example, the `<Dialog/>` component makes it possible to control the native `<dialog/>` element declaratively.  
+Normally, a `<dialog/>` can only be opened imperatively with the element.showModal() method.  
+With the open prop, you can manage its state directly in React, making it easier to work with.  
+You can also specify an anchorEl to position it like a menu.    
+
+**A `<Dialog/>` component always renders a single `<dialog>` element**, nothing more.<br/>

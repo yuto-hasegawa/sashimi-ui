@@ -13,8 +13,41 @@ import SamplePane from "../../components/SamplePane.astro";
 
 - `legend`
 
+## Usage
 
-## Wrapper component
+<SamplePane>
+<fieldset class="fieldset">
+  <legend class="legend">Name</legend>
+  <input class="input" placeholder="Yuto Hasegawa" />
+</fieldset>
+</SamplePane>
+
+```html
+<fieldset class="fieldset">
+  <legend class="legend">Name</legend>
+  <input class="input" placeholder="Yuto Hasegawa" />
+</fieldset>
+```
+
+## States
+
+<SamplePane>
+<fieldset class="fieldset">
+  <legend class="legend error">Name</legend>
+  <input class="input error" value="123456" />
+</fieldset>
+</SamplePane>
+
+```html
+<fieldset class="fieldset">
+  <legend class="legend error">Name</legend>
+  <input class="input error" value="123456" />
+</fieldset>
+```
+
+## React component
 
 React component `Legend` is available.  
-It works well with [`Fieldset`](/components/fieldset).
+It inherits the error property from a [`Fieldset`](/components/fieldset) component and automatically applies the error style.  
+  
+※ The disabled state is automatically inherited through the native HTML feature.

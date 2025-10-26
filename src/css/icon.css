@@ -1,0 +1,17 @@
+/* Base */
+.icon {
+	display: inline-block;
+	width: auto;
+	max-width: 1.2em;
+	height: 1.2em;
+	vertical-align: text-bottom;
+}
+:root {
+	--icon-tint-fill: var(--sui-color-key-tertiary);
+	--icon-tint-stroke: var(--sui-color-key-secondary);
+}
+picture.icon > img {
+	display: block;
+	width: auto;
+	height: 100%;
+}

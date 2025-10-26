@@ -24,7 +24,7 @@ import SamplePane from "../../components/SamplePane.astro";
 </select>
 </SamplePane>
 
-## State
+## States
 
 <SamplePane>
 <select class="select error">
@@ -48,10 +48,12 @@ import SamplePane from "../../components/SamplePane.astro";
 </select>
 ```
 
-## Wrapper component
+## React component
 
 React component `Select` is available.  
-It works well with [`Fieldset`](/components/fieldset).
+It inherits the error property from a [`Fieldset`](/components/fieldset) component and automatically applies the error style.  
+  
+※ The disabled state is automatically inherited through the native HTML feature.
 
 ## Q&A
 

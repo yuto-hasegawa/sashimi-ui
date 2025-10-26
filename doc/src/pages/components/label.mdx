@@ -1,0 +1,53 @@
+---
+title: Legend
+layout: ../../components/Layout.astro
+---
+
+import SamplePane from "../../components/SamplePane.astro";
+
+# Label
+
+`.label` is for html label element.
+
+## Applicable Elements
+
+- `label`
+
+## Usage
+
+<SamplePane>
+<fieldset class="fieldset">
+  <label class="label">Name</label>
+  <input class="input" placeholder="Yuto Hasegawa" />
+</fieldset>
+</SamplePane>
+
+```html
+<fieldset class="fieldset">
+  <label class="label">Name</label>
+  <input class="input" placeholder="Yuto Hasegawa" />
+</fieldset>
+```
+
+## States
+
+<SamplePane>
+<fieldset class="fieldset">
+  <label class="label error">Name</label>
+  <input class="input error" value="123456" />
+</fieldset>
+</SamplePane>
+
+```html
+<fieldset class="fieldset">
+  <label class="label error">Name</label>
+  <input class="input error" value="123456" />
+</fieldset>
+```
+
+## React component
+
+React component `Label` is available.  
+It inherits the error property from a [`Fieldset`](/components/fieldset) component and automatically applies the error style.  
+  
+※ The disabled state is automatically inherited through the native HTML feature.

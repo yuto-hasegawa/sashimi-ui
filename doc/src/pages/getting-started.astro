@@ -1,0 +1,130 @@
+---
+import { Code } from "astro:components";
+import Layout from "../components/Layout.astro";
+---
+
+<Layout title="Welcome to Astro.">
+	<div id="wrapper" class="short">
+		<h1>Getting Started</h1>
+
+		<h2>Choose your class name style</h2>
+		<p>
+			sashimi UI provides two class naming styles. Load whichever style you prefer.
+		</p>
+		<fieldset class="fieldset modes">
+				<label class="card mode" for="huey">
+					<input class="radio" type="radio" id="huey" name="drone" value="huey" checked onchange="document.getElementById('wrapper').className='short';" />
+					<h3 class="title">Short style</h3>
+					<p class="note">Simple names like <code>.button</code> and <code>.link</code>.</p>
+				</label>
+
+				<label class="card mode" for="dewey">
+					<input class="radio" type="radio" id="dewey" name="drone" value="dewey" onchange="document.getElementById('wrapper').className='prefixed';" />
+					<h3 class="title">Prefixed style</h3>
+					<p class="note">Prefixed names like <code>.sui-button</code> and <code>.sui-link</code>, which help avoid naming conflicts.</p>
+				</label>
+		</fieldset>
+
+		<h2>Installation</h2>
+
+		<h3>
+			Use the CSS files (download or CDN) 
+		</h3>
+		<p>
+			Download
+			<a class="short link" href="https://unpkg.com/browse/sashimi-ui@0.0.1/bundle.css">the bundled CSS file<svg class="icon"><use href="/open_in_new.svg" /></svg></a>
+			<a class="prefixed link" href="https://unpkg.com/browse/sashimi-ui@0.0.1/sui-bundle.css">the bundled CSS file(sui-prefixed)<svg class="icon"><use href="/open_in_new.svg" /></svg></a>
+			and
+			<a class="link" href="https://unpkg.com/browse/sashimi-ui@0.0.1/sui-bundle.css">default theme CSS<svg class="icon"><use href="/open_in_new.svg" /></svg></a>
+			, then put them in your project.<br/>
+			Or you can use the CDN links directly.<br/>
+		</p>
+		<Code class="short" lang="html" code=`
+<!-- inside the <head> tag -->
+<link rel="stylesheet" href="path/to/downloaded/bundle.css">
+<link rel="stylesheet" href="path/to/downloaded/default.theme.css">
+
+<!-- inside the <body> tag -->
+<button class="button primary">Your first button</button>
+		`/>
+		<Code class="prefixed" lang="html" code=`
+<!-- inside the <head> tag -->
+<link rel="stylesheet" href="path/to/downloaded/sui-bundle.css">
+<link rel="stylesheet" href="path/to/downloaded/default.theme.css">
+
+<!-- inside the <body> tag -->
+<button class="sui-button sui-primary">Your first button</button>
+		`/>
+
+		<h3>
+			Install via npm
+		</h3>
+		<p>
+			Recommended when using the React components.<br/>
+			Install it with:
+		</p>
+		<Code lang={"bash"} code={`npm install sashimi-ui`}/>
+		<p>Then import the CSS files via import.</p>
+		<Code class={"short"} lang={"jsx"} code=`
+import "path/to/downloaded/bundle.css";
+import "path/to/downloaded/default.theme.css";
+
+// inside your component
+<button class="button">Your first button</button>
+		`/>
+		<Code class={"prefixed"} lang={"jsx"} code=`
+import "sashimi-ui/sui-prefixed.css";
+import "sashimi-ui/default.theme.css";
+
+// inside your component
+<button class="sui-button">Your first button</button>
+		`/>
+		</code>
+	</main>
+</Layout>
+
+<style>
+	#wrapper.short .prefixed {
+		display: none;
+	}
+	#wrapper.prefixed .short {
+		display: none;
+	}
+
+	.modes {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 16px;
+	}
+	@media screen and (max-width: 768px) {
+		.modes {
+			grid-template-columns: 1fr;
+		}		
+	}
+
+	.mode {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-template-rows: 32px auto;
+		grid-template-areas: "radio title" "_ description";
+		column-gap: 12px;
+		row-gap: 4px;
+	}
+	.mode:has(input[type="radio"]:checked) {
+		outline: 2px solid var(--sui-color-key-primary);
+		outline-offset: 2px;
+		background-color: #d4e2fc40;
+	}
+
+	.mode > .radio {
+		align-self: center;
+	}
+	.mode > .title {
+		grid-area: title;
+		margin: 0;
+	}
+	.mode > .note {
+		grid-area: description;
+		margin: 0;
+	}
+</style>

@@ -1,19 +1,23 @@
 "use client";
 
-import React, { useContext } from "react";
+import { type ComponentPropsWithRef, useContext } from "react";
 import { FieldsetContext } from "./Fieldset.js";
-import { prefix } from "./utils/prefix.js";
 import { cn } from "./utils/cn.js";
+import { prefix } from "./utils/prefix.js";
 
 export interface LabelProps {
 	error?: string;
 	classNamePrefix?: string;
 }
 
-const Label = React.forwardRef<
-	HTMLLabelElement,
-	LabelProps & React.ComponentPropsWithoutRef<"label">
->(({ error, children, className, classNamePrefix, ...rest }, ref) => {
+const Label = ({
+	error,
+	children,
+	className,
+	classNamePrefix,
+	ref,
+	...rest
+}: LabelProps & ComponentPropsWithRef<"label">) => {
 	const ctx = useContext(FieldsetContext);
 	const err = error ?? ctx.error;
 
@@ -30,7 +34,7 @@ const Label = React.forwardRef<
 			{children}
 		</label>
 	);
-});
+};
 
 Label.displayName = "Input";
 

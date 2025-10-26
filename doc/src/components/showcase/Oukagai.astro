@@ -1,0 +1,23 @@
+---
+interface Props {
+	style?: string;
+}
+
+const { style } = Astro.props;
+---
+
+<form class="card" style={`${style}; display: flex; flex-direction: column; gap: 16px;`}>
+  <fieldset class="fieldset">
+    <legend class="legend">Name</legend>
+    <input class="input" type="text" placeholder="Isono Katsuo" />
+    <p class="helper-text">Your name will be called when it’s your turn.</p>
+  </fieldset>
+
+  <select name="dish" class="select" id="">
+    <option value="">Select seat</option>
+    <option value="sushi">Table seat</option>
+    <option value="ramen">Counter seat</option>
+  </select>
+
+  <label class="label"><input class="checkbox" type="checkbox" checked />I’d like wasabi included.</label>  
+</form>

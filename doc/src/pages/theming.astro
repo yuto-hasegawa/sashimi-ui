@@ -1,0 +1,53 @@
+---
+import { Code } from "astro:components";
+import Layout from "../components/Layout.astro";
+import SamplePane from "../components/SamplePane.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <h1>Theming</h1>
+
+  <h2>Basic usage</h2>
+  <p>Download the default CSS and modify it as you like. That’s it.</p>
+
+  <h2>Tips</h2>
+
+  <h3>Dark mode</h3>
+  <p>The default CSS already includes dark mode settings.<br/>Just use the standard media query:</p>
+  <Code lang="css" code=`
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Your dark mode variables here */
+  }
+}
+  `/>
+
+  <h3>Nesting themes</h3>
+  <p>CSS variables support nested overrides, so you can switch themes within specific elements.</p>
+  <SamplePane style="display: block;">
+    Japanese theme <a href="" class="link">example link<svg class="icon"><use href="/info.svg"/></svg></a>
+    <button class="button">Button</button>
+    <div class="kawasaki" style="margin-top: 8px;">
+      Kawasaki theme <a href="" class="link">example link<svg class="icon"><use href="/info.svg"/></svg></a>
+      <button class="button">Button</button>
+    </div>
+  </SamplePane>
+</Layout>
+
+<style>
+  .kawasaki {
+    --sui-color-neutral-primary: #f5f5f5;
+    --sui-color-key-primary: #ff3b30;
+    --sui-color-outline-primary: #aa4440;
+    --sui-color-highlight-primary: #ffb2ae;
+    --sui-color-surface: #2c2828;
+    --sui-roundness: 16px;
+    
+    background-color: var(--sui-color-surface);
+    color: var(--sui-color-neutral-primary);
+    border: 1px solid var(--sui-color-outline-primary);
+    border-radius: var(--sui-roundness);
+    padding: 12px;
+  }
+</style>
+

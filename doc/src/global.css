@@ -1,46 +1,74 @@
 @import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded&family=Inter:wght@100..900&family=Source+Code+Pro&display=swap");
 
 html {
-  font-family: "Inter", system-ui, sans-serif;
-  padding: 0;
+	font-family: "Inter", system-ui, sans-serif;
+	padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  color: var(--sui-color-neutral-primary);
-  line-height: 1.6;
+	margin: 0;
+	padding: 0;
+	color: var(--sui-color-neutral-primary);
+	background-color: var(--sui-color-surface);
+	line-height: 1.6;
+}
+
+main {
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 32px 16px;
+	box-sizing: border-box;
 }
 
 h1 {
-  font-weight: 700;
-  font-size: 48px;
+	font-weight: 700;
+	font-size: 48px;
+	word-break: break-all;
+	line-height: 1;
 }
 
 h2 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-block-start: 64px;
+	font-size: 20px;
+	font-weight: 700;
+	margin-block-start: 64px;
+}
+
+h3 {
+	font-size: 16px;
+	font-weight: 600;
+	margin-block-start: 48px;
+}
+
+svg {
+	display: block;
 }
 
 :not(.astro-code) > code {
-  display: inline-block;
-  font-family: "Source Code Pro", monospace;
-  background-color: var(--sui-color-highlight-secondary);
-  border: 1px solid var(--sui-color-outline-secondary);
-  padding: 4px;
-  border-radius: 4px;
+	display: inline-block;
+	font-family: "Source Code Pro", monospace;
+	background-color: var(--sui-color-highlight-secondary);
+	border: 1px solid var(--sui-color-outline-secondary);
+	padding: 4px;
+	border-radius: 4px;
 }
 
 .astro-code {
-  padding: 16px;
-  border-radius: var(--sui-roundness);
-  font-family: "Source Code Pro", monospace;
+	padding: 16px;
+	border-radius: var(--sui-roundness);
+	font-family: "Source Code Pro", monospace;
 }
 
 ul {
-  padding-inline-start: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+	padding-inline-start: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+blockquote {
+	padding: 16px;
+	margin: 0;
+	background: rgb(255 237 117 / 15%);
+	border-radius: var(--sui-roundness);
 }

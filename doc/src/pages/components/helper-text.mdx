@@ -23,9 +23,20 @@ import SamplePane from "../../components/SamplePane.astro";
 </fieldset>
 </SamplePane>
 
+## States
 
-## Wrapper component
+<SamplePane>
+<fieldset class="fieldset">
+<input type="datetime-local" class="input error" />
+<p class="helper-text error">This is a helper text.</p>
+</fieldset>
+</SamplePane>
+
+## React component
 
 React component `HelperText` is available.  
 It shows an error message when `error` is specified.  
-Also it works well with [`Fieldset`](/components/fieldset).
+  
+It inherits the error property from a [`Fieldset`](/components/fieldset) component and automatically applies the error style.  
+  
+※ The disabled state is automatically inherited through the native HTML feature.

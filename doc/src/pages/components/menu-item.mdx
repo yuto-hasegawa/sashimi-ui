@@ -17,7 +17,7 @@ import SamplePane from "../../components/SamplePane.astro";
 ## Basic Usage
 
 <SamplePane filled>
-  <ul class="card" style="width: fit-content; background: #FFFFFF;">
+  <ul class="card" style="width: fit-content; background: var(--sui-color-surface);">
     <li><a class="menu-item" href="#basic-usage">Anchor</a></li>
     <li><button class="menu-item">Copy URL</button></li>
     <li><button class="menu-item">Sign out</button></li>
@@ -58,8 +58,8 @@ import SamplePane from "../../components/SamplePane.astro";
 
 <SamplePane filled>
   <ul class="card" style="width: fit-content;">
-    <li><a class="menu-item" href="#combination"><img class="icon" src="/sign_in.svg" />Sign in</a></li>
-    <li><button class="menu-item"><img class="icon" src="/share.svg" />Share with friends</button></li>
+    <li><a class="menu-item" href="#combination"><svg class="icon"><use href="/signin.svg" /></svg>Sign in</a></li>
+    <li><button class="menu-item"><svg class="icon"><use href="/share.svg" /></svg>Share with friends</button></li>
   </ul>
 </SamplePane>
 

@@ -1,22 +1,23 @@
 /* Base */
 .textarea {
-  padding: calc(var(--sui-base-padding) * 2 / 3) var(--sui-base-padding);
-  box-sizing: border-box;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: var(--sui-roundness);
-  border-color: var(--sui-color-outline-primary);
-  font: inherit;
-  color: var(--sui-color-neutral-primary);
+	padding: calc(var(--sui-base-padding) * 2 / 3) var(--sui-base-padding);
+	box-sizing: border-box;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: var(--sui-roundness-normal);
+	border-color: var(--sui-color-outline-primary);
+	font: inherit;
+	color: var(--sui-color-neutral-primary);
+	background: var(--sui-color-surface);
 }
 .textarea::placeholder {
-  color: var(--sui-color-neutral-secondary);
+	color: var(--sui-color-neutral-secondary);
 }
 .textarea:disabled {
-  background-color: var(--sui-color-disabled-fill);
+	background-color: var(--sui-color-disabled-fill);
 }
 
 /* Variants */
 .textarea:where(.error) {
-  border-color: var(--sui-color-error);
+	border-color: var(--sui-color-error);
 }

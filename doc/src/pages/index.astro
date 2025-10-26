@@ -1,24 +1,253 @@
 ---
 import Layout from "../components/Layout.astro";
+import Agari from "../components/showcase/Agari";
+import Nobori from "../components/showcase/Nobori.astro";
+import Oshinagaki from "../components/showcase/Oshinagaki";
+import Oukagai from "../components/showcase/Oukagai.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<h1>Home</h1>
-		<p>sashimi UI is an UI library which brings out the best of the ingredients(HTML)</p>
+  <h1>
+    <svg viewBox="0 0 1170 200" class="logo"><use href="/logo.svg" /></svg>
+  </h1>
+  <h2>Unleash the native power of HTML5 and CSS3</h2>
+  <p>
+    Sashimi UI is a minimal CSS framework designed to enhance, not replace, the <strong>native capabilities of HTML</strong>.
+    It styles elements such as <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, and <code>&lt;input&gt;</code> without unnecessary wrapping or abstraction.
+    By embracing the <strong>natural behavior of the web</strong>, sashimi UI lets the platform shine in its purest form.
+  </p>
 
-		<h2>Q&A</h2>
-		<h3>Is it a Bootstrap again?</h3>
-		<p>Yes!! But more focused on HTML Elements' native power.<br/>If it's not an HTML job, it's not a sashimi UI job either.</p>
-	</main>
+  <div id="showcase" class="default">
+    <div class="layout">
+      <Oshinagaki style={{gridColumn: "span 2"}} client:visible />
+      <Nobori />
+      <Oukagai />
+      <Agari  style={{gridColumn: "span 2"}} />
+    </div>
+    <fieldset class="switch-pane">
+      <input type="radio" class="color-switch" name="demo" id="option1" checked style="background: #1261ec;" onclick="document.getElementById('showcase').className='default'" />
+      <input type="radio" class="color-switch" name="demo" id="option1" style="background: #d44f4f;" onclick="document.getElementById('showcase').className='salmon'" />
+      <input type="radio" class="color-switch" name="demo" id="option1" style="background: #9cd000;" onclick="document.getElementById('showcase').className='cyber'"/>
+      <input type="radio" class="color-switch" name="demo" id="option1" style="background: #ffb3c1;" onclick="document.getElementById('showcase').className='kawaii'"/>
+      <input type="radio" class="color-switch" name="demo" id="option1" style="background: #d1a443;" onclick="document.getElementById('showcase').className='mono'"/>
+    </fieldset>
+  </div>
+
+  <h2>Why sashimi UI?</h2>
+  <ul class="features">
+    <li class="feature-item">
+      <span class="icon">🧩</span>
+      <h3>Native by Design</h3>
+      <p>
+        Enhances the web without replacing it.
+        Elements like <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> keep their native behavior and semantics.
+      </p>
+    </li>
+    <li class="feature-item">
+      <span class="icon">⚡</span>
+      <h3>Pure CSS, Zero JavaScript</h3>
+      <p>
+        No scripts, no logic.
+        Lightweight, modern CSS that’s already fast, clean, and easy to maintain.
+      </p>
+    </li>
+    <li class="feature-item">
+      <span class="icon">🌈</span>
+      <h3>Framework-Agnostic and Simple to Theme</h3>
+      <p>
+        Works with React, Vue, Svelte, or plain HTML.
+        CSS variables keep theming simple and consistent.
+      </p>
+    </li>
+  </ul>
+
+  <h2>Q&A</h2>
+  <h3>So... isn’t this just Bootstrap?</h3>
+  <p>
+    In spirit, yes — but lighter, simpler, and closer to the metal. sashimi UI
+    focuses on amplifying what HTML already does best, instead of rebuilding it
+    with extra layers of <code>&lt;div&gt;</code>s.
+  </p>
+
+  <h3>Aren’t there too few components?</h3>
+  <p>
+    Sashimi UI provides a foundation, not a full library. It focuses on styling
+    native elements and leaves room for you to build what you need. You can
+    freely combine it with other frameworks or your own components — it’s
+    designed to stay out of your way.
+  </p>
 </Layout>
 
 <style>
-	.button.large {
-		height: 48px;
-		border-radius: 16px;
-		font-weight: 600;
-		font-size: 18px;
-		padding: 0 24px;
-	}
+  .logo {
+    width: 320px;
+  }
+	@media (max-width: 768px) {
+    .logo {
+      width: 200px;
+    }
+  }
+
+  #showcase.default {
+    --showcase-background: var(--sui-color-highlight-primary);
+  }
+  #showcase.salmon {
+    --showcase-background: #f6f3f3;
+    --sui-color-neutral-primary: #430f22;
+    --sui-color-neutral-secondary: #96898c;
+    --sui-color-neutral-tertiary: #dbe0e4;
+    --sui-color-on-neutral-tertiary: #6c757b;
+    --sui-color-key-primary: #d44f4f;
+    --sui-color-on-key-primary: #ffffff;
+    --sui-color-key-secondary: #eb6565;
+    --sui-color-key-tertiary: #ffe3e3;
+    --sui-color-outline-primary: #d9c4c4;
+    --sui-color-outline-secondary: #f3e4e4;
+    --sui-color-highlight-primary: #e7dfdf;
+    --sui-color-highlight-secondary: #fbf5f5;
+    --sui-color-surface: #ffffff;
+    --sui-roundness-strong: 16px;
+    --sui-roundness-normal: 8px;
+  }
+  #showcase.cyber {
+    --showcase-background: #17180e;
+    --sui-color-neutral-primary: #fafafa;
+    --sui-color-neutral-secondary: #a2a2a2;
+    --sui-color-neutral-tertiary: #858585;
+    --sui-color-on-neutral-tertiary: #6c757b;
+    --sui-color-key-primary: #c4ea51;
+    --sui-color-on-key-primary: #000000;
+    --sui-color-key-secondary: #c4ea51;
+    --sui-color-key-tertiary: #c4ea5136;
+    --sui-color-outline-primary: #50601f;
+    --sui-color-outline-secondary: #374216;
+    --sui-color-highlight-primary: #c4ea5175;
+    --sui-color-highlight-secondary: #c4ea512e;
+    --sui-color-surface: #000000;
+    --sui-roundness-strong: 0px;
+    --sui-roundness-normal: 0px;
+  }
+  #showcase.kawaii {
+    --showcase-background: #ffe8ea;
+    --sui-color-neutral-primary: #d25d7f;
+    --sui-color-neutral-secondary: #dc9aad;
+    --sui-color-neutral-tertiary: #db90a6;
+    --sui-color-on-neutral-tertiary: #ffffff;
+    --sui-color-key-primary: #4f16bb;
+    --sui-color-on-key-primary: #ffc8c8;
+    --sui-color-key-secondary: #6c32da;
+    --sui-color-key-tertiary: #ffe5fd;
+    --sui-color-outline-primary: #edcbd1;
+    --sui-color-outline-secondary: #f0d0e1;
+    --sui-color-highlight-primary: #7a50cb;
+    --sui-color-highlight-secondary: #db8be21f;
+    --sui-color-surface: #fff2f5;
+    --sui-color-scrim: rgb(255 218 234 / 65%);
+    --sui-roundness-strong: 24px;
+    --sui-roundness-normal: 12px;
+  }
+  #showcase.mono {
+    --showcase-background: #fffaf0;
+    --sui-color-neutral-primary: #3e2723;
+    --sui-color-neutral-secondary: #7b5e57;
+    --sui-color-neutral-tertiary: #a1887f;
+    --sui-color-on-neutral-tertiary: #6c757b;
+    --sui-color-key-primary: #d1a443;
+    --sui-color-on-key-primary: #3e2723;
+    --sui-color-key-secondary: #f1d9be;
+    --sui-color-key-tertiary: #faeedc;
+    --sui-color-outline-primary: #e6d3b3;
+    --sui-color-outline-secondary: #f5eee0;
+    --sui-color-highlight-primary: #f0e1b6;
+    --sui-color-highlight-secondary: #fbf5df;
+    --sui-color-surface: #ffffff;
+  }
+
+  
+  #showcase {
+    background-color: var(--showcase-background);
+    color: var(--sui-color-neutral-primary);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px 32px 16px 32px;
+    border-radius: 12px;
+  }
+  #showcase .layout {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    grid-auto-flow: row dense;
+  }
+  .switch-pane {
+    border: none;
+    padding: 8px 0;
+  }
+  .color-switch {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .color-switch:checked {
+    outline: 2px solid var(--sui-color-key-primary);
+    outline-offset: 2px;
+  }
+  @media screen and (max-width: 768px) {
+    #showcase {
+      overflow-x: auto;
+      padding: 0 32px;
+      margin: 0 -32px;
+      background: transparent !important;
+      border-radius: 0;
+    }
+    #showcase .layout {
+      display:grid;
+      grid-template-columns: repeat(6, minmax(280px, 1fr));
+      width: fit-content;
+      background-color: var(--showcase-background);
+      padding: 16px;
+      border-radius: 12px;
+    }
+    #showcase .switch-pane {
+      position: sticky;
+      left: 0;
+    }
+  }
+
+  .features {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+  }
+  @media screen and (max-width: 768px) {
+    .features {
+      flex-direction: column;
+    }    
+  }
+
+  .feature-item {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .feature-item .icon {
+    font-size: 32px;
+    background-color: var(--sui-color-highlight-primary);
+    display: flex;
+    width: 48px;
+    height: 48px;
+    max-width: unset;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+  }
+  .feature-item h3, .feature-item p {
+    margin: 0;
+  }
+
 </style>

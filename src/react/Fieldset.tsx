@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
-import { prefix } from "./utils/prefix.js";
+import React, { type ComponentPropsWithRef } from "react";
 import { cn } from "./utils/cn.js";
+import { prefix } from "./utils/prefix.js";
 
 export const FieldsetContext = React.createContext<{ error?: string }>({});
 
@@ -11,12 +11,16 @@ export interface FieldsetProps {
 	classNamePrefix?: string;
 }
 
-const Fieldset = React.forwardRef<
-	HTMLFieldSetElement,
-	FieldsetProps & React.ComponentPropsWithoutRef<"fieldset">
->(({ error, children, className, classNamePrefix, ...rest }, ref) => {
+const Fieldset = ({
+	error,
+	children,
+	className,
+	classNamePrefix,
+	ref,
+	...rest
+}: FieldsetProps & ComponentPropsWithRef<"fieldset">) => {
 	return (
-		<FieldsetContext.Provider value={{ error }}>
+		<FieldsetContext value={{ error }}>
 			<fieldset
 				{...rest}
 				ref={ref}
@@ -24,9 +28,9 @@ const Fieldset = React.forwardRef<
 			>
 				{children}
 			</fieldset>
-		</FieldsetContext.Provider>
+		</FieldsetContext>
 	);
-});
+};
 
 Fieldset.displayName = "Fieldset";
 

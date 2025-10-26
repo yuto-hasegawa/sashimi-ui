@@ -4,7 +4,7 @@ layout: ../../components/Layout.astro
 ---
 
 import SamplePane from "../../components/SamplePane.astro";
-import "./card.css";
+import "./_card.css";
 
 # Card
 
@@ -18,9 +18,9 @@ import "./card.css";
 
 ## Basic Usage
 
-Elements get interactive only when they are `a` or `button`.
+Elements get interactive when they are `a` or `button`.
 
-<SamplePane filled style={{display: "grid", alignItems: "stretch", gridTemplateColumns: "1fr 1fr 1fr"}}>
+<SamplePane id="cards-container" filled>
   <a class="card" href="">
     <p class="my-chip">&lt;a/&gt;</p>
     <p class="my-title">Anchor Card</p>

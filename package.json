@@ -9,7 +9,9 @@
 		"url": "https://github.com/yuto-hasegawa/sashimi-ui"
 	},
 	"type": "module",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"exports": {
 		"./bundle.css": "./dist/css/bundle.css",
 		"./sui-bundle.css": "./dist/css/sui-bundle.css",
@@ -29,18 +31,18 @@
 		"build:css:suibundle": "ls src/css/*.css | grep -v .theme.css | xargs cat | postcss --config config/sui-prefixed > dist/css/sui-bundle.css"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.7.3",
-		"@types/react": "^18.0.0",
-		"@types/react-dom": "^18.0.0",
+		"@biomejs/biome": "^2.2.6",
+		"@types/react": "^19.0.0",
+		"@types/react-dom": "^19.0.0",
 		"autoprefixer": "^10.4.19",
 		"cssnano": "^7.0.1",
 		"postcss": "^8.4.38",
 		"postcss-cli": "^11.0.0",
 		"postcss-rename": "^0.6.1",
-		"typescript": "^5.4.5"
+		"typescript": "^5.9.3"
 	},
 	"peerDependencies": {
-		"react": ">=18.0.0 <19.0.0",
-		"react-dom": ">=18.0.0 <19.0.0"
+		"react": ">=19.0.0 <20.0.0",
+		"react-dom": ">=19.0.0 <20.0.0"
 	}
 }

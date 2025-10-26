@@ -1,39 +1,42 @@
 /* Reset */
 .select:where(select) {
-  appearance: none;
+	appearance: none;
 }
 
 /* Base */
 .select {
-  position: relative;
-  border: 1px solid var(--sui-color-outline-primary);
-  height: var(--sui-input-base-height);
-  font: inherit;
-  padding: calc(var(--sui-base-padding) * 2 / 3) calc(var(--sui-base-padding) * 2) calc(var(--sui-base-padding) * 2 / 3) var(--sui-base-padding);
-  border-radius: var(--sui-roundness);
-  color: var(--sui-color-neutral-primary);
+	position: relative;
+	border: 1px solid var(--sui-color-outline-primary);
+	height: var(--sui-input-base-height);
+	font: inherit;
+	padding: calc(var(--sui-base-padding) * 2 / 3)
+		calc(var(--sui-base-padding) * 2) calc(var(--sui-base-padding) * 2 / 3)
+		var(--sui-base-padding);
+	border-radius: var(--sui-roundness-normal);
+	color: var(--sui-color-neutral-primary);
+	background-color: var(--sui-color-surface);
 
-  background-image: url("data:image/svg+xml;base64,ICA8c3ZnIHdpZHRoPSIxMSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgMTEgNyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNNS40ODU1IDQuMTAwNDZMOC44MDc3NiAwLjc3ODE5OEwxMC4yMjIgMi4xOTI0MUw1LjQ4NTUgNi45Mjg4OUwwLjc0OTAyMyAyLjE5MjQxTDIuMTYzMjQgMC43NzgxOThMNS40ODU1IDQuMTAwNDZaIiBmaWxsPSIjNGU2NzdjIi8+CiAgPC9zdmc+");
-  /*
+	background-image: url("data:image/svg+xml;base64,ICA8c3ZnIHdpZHRoPSIxMSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgMTEgNyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNNS40ODU1IDQuMTAwNDZMOC44MDc3NiAwLjc3ODE5OEwxMC4yMjIgMi4xOTI0MUw1LjQ4NTUgNi45Mjg4OUwwLjc0OTAyMyAyLjE5MjQxTDIuMTYzMjQgMC43NzgxOThMNS40ODU1IDQuMTAwNDZaIiBmaWxsPSIjNGU2NzdjIi8+CiAgPC9zdmc+");
+	/*
   <svg width="11" height="7" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg">
   <path d="M5.4855 4.10046L8.80776 0.778198L10.222 2.19241L5.4855 6.92889L0.749023 2.19241L2.16324 0.778198L5.4855 4.10046Z" fill="#4e677c"/>
   </svg>
   */
-  background-repeat: no-repeat;
-  background-position: center right 6px;
+	background-repeat: no-repeat;
+	background-position: center right 6px;
 }
 
 .select:has(option:checked[value=""]) {
-  color: var(--sui-color-neutral-secondary);
+	color: var(--sui-color-neutral-secondary);
 }
-:where(.select) option{
-  color: var(--sui-color-neutral-primary);
+:where(.select) option {
+	color: var(--sui-color-neutral-primary);
 }
 
 .select:where(.error) {
-  border-color: var(--sui-color-error);
+	border-color: var(--sui-color-error);
 }
 
 .select:disabled {
-  background-color: var(--sui-color-disabled-fill);
+	background-color: var(--sui-color-disabled-fill);
 }

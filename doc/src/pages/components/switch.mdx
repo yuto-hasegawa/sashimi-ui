@@ -34,7 +34,7 @@ import SamplePane from "../../components/SamplePane.astro";
 </div>
 ```
 
-## State
+## States
 
 <SamplePane>
 <label class="label error">Use wasabi<input class="switch error" type="checkbox" /></label>
@@ -52,10 +52,12 @@ import SamplePane from "../../components/SamplePane.astro";
 </label>
 ```
 
-## Wrapper component
+## React component
 
 React component `Input` is available.  
-It works well with [`Fieldset`](/components/fieldset).
+It inherits the error property from a [`Fieldset`](/components/fieldset) component and automatically applies the error style.  
+  
+※ The disabled state is automatically inherited through the native HTML feature.
 
 ## Q&A
 

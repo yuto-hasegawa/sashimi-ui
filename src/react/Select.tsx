@@ -1,19 +1,23 @@
 "use client";
 
-import React, { useContext } from "react";
+import { type ComponentPropsWithRef, useContext } from "react";
 import { FieldsetContext } from "./Fieldset.js";
-import { prefix } from "./utils/prefix.js";
 import { cn } from "./utils/cn.js";
+import { prefix } from "./utils/prefix.js";
 
 export interface SelectProps {
 	error?: string;
 	classNamePrefix?: string;
 }
 
-const Select = React.forwardRef<
-	HTMLSelectElement,
-	SelectProps & React.ComponentPropsWithoutRef<"select">
->(({ error, children, className, classNamePrefix, ...rest }, ref) => {
+const Select = ({
+	error,
+	children,
+	className,
+	classNamePrefix,
+	ref,
+	...rest
+}: SelectProps & ComponentPropsWithRef<"select">) => {
 	const ctx = useContext(FieldsetContext);
 	const err = error ?? ctx.error;
 
@@ -30,7 +34,7 @@ const Select = React.forwardRef<
 			{children}
 		</select>
 	);
-});
+};
 
 Select.displayName = "Select";
 

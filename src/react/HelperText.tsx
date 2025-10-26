@@ -1,19 +1,23 @@
 "use client";
 
-import React, { useContext } from "react";
+import { type ComponentPropsWithRef, useContext } from "react";
 import { FieldsetContext } from "./Fieldset.js";
-import { prefix } from "./utils/prefix.js";
 import { cn } from "./utils/cn.js";
+import { prefix } from "./utils/prefix.js";
 
 export interface HelperTextProps {
 	error?: string;
 	classNamePrefix?: string;
 }
 
-const HelperText = React.forwardRef<
-	HTMLParagraphElement,
-	HelperTextProps & React.ComponentPropsWithoutRef<"p">
->(({ error, children, className, classNamePrefix, ...rest }, ref) => {
+const HelperText = ({
+	error,
+	children,
+	className,
+	classNamePrefix,
+	ref,
+	...rest
+}: HelperTextProps & ComponentPropsWithRef<"p">) => {
 	const ctx = useContext(FieldsetContext);
 	const err = error ?? ctx.error;
 
@@ -30,7 +34,7 @@ const HelperText = React.forwardRef<
 			{err || children}
 		</p>
 	);
-});
+};
 
 HelperText.displayName = "HelperText";
 

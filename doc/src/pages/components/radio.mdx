@@ -37,7 +37,7 @@ import SamplePane from "../../components/SamplePane.astro";
 </fieldset>
 ```
 
-## State
+## States
 
 <SamplePane style={{gap: "64px"}}>
 <fieldset className="fieldset">
@@ -61,10 +61,12 @@ import SamplePane from "../../components/SamplePane.astro";
 </fieldset>
 ```
 
-## Wrapper component
+## React component
 
 React component `Input` is available.  
-It works well with [`Fieldset`](/components/fieldset).
+It inherits the error property from a [`Fieldset`](/components/fieldset) component and automatically applies the error style.  
+  
+※ The disabled state is automatically inherited through the native HTML feature.
 
 ## Q&A
 

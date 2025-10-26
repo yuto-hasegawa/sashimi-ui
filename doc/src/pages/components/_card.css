@@ -1,0 +1,31 @@
+.my-chip {
+	background-color: var(--sui-color-key-tertiary);
+	color: var(--sui-color-key-primary);
+	width: fit-content;
+	padding: 0px 12px;
+	margin: 0;
+	border-radius: 20px;
+}
+
+.my-title {
+	font-size: 20px;
+	font-weight: 600;
+	margin: 0;
+}
+
+.my-body {
+	color: var(--sui-color-neutral-secondary);
+	margin: 0;
+}
+
+#cards-container {
+	display: grid;
+	align-items: stretch;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+@media screen and (max-width: 768px) {
+	#cards-container {
+		display: flex;
+		flex-direction: column;
+	}
+}
