@@ -64,14 +64,14 @@ Feel free to write html and css as always.
 
 <SamplePane filled>
   <button class="card" style="padding:0; width:min-content;">
-    <img src="/sashimi.jpg" width="320" />
+    <img src={`${import.meta.env.BASE_URL}/sashimi.jpg`} width="320" />
     <p style="padding:12px; margin:0;">Hello This is a button card with a large thumbnail.</p>
   </button>
 </SamplePane>
 
 ```html
 <button class="card" style="padding:0; width:min-content;">
-  <img src="/sashimi.jpg" width="320" />
+  <img src={`${import.meta.env.BASE_URL}/sashimi.jpg`} width="320" />
   <p style="padding:12px; margin:0;">Hello This is a button card with a large thumbnail.</p>
 </button>
 ```
