@@ -1,5 +1,6 @@
 import clsx from "clsx";
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 
 type Category = "TUNA" | "HIKARIMONO" | "SHELLFISH" | "MAKIMONO";
 

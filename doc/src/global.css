@@ -40,6 +40,10 @@ h3 {
 	margin-block-start: 48px;
 }
 
+a {
+	color: var(--sui-color-key-primary);
+}
+
 svg {
 	display: block;
 }

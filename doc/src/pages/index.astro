@@ -1,12 +1,12 @@
 ---
 import Layout from "../components/Layout.astro";
-import Agari from "../components/showcase/Agari";
+import Agari from "../components/showcase/Agari.astro";
 import Nobori from "../components/showcase/Nobori.astro";
 import Oshinagaki from "../components/showcase/Oshinagaki";
 import Oukagai from "../components/showcase/Oukagai.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout>
   <h1>
     <svg viewBox="0 0 1170 200" class="logo"><use href="/logo.svg" /></svg>
   </h1>
@@ -22,7 +22,7 @@ import Oukagai from "../components/showcase/Oukagai.astro";
       <Oshinagaki style={{gridColumn: "span 2"}} client:visible />
       <Nobori />
       <Oukagai />
-      <Agari  style={{gridColumn: "span 2"}} />
+      <Agari  style="grid-column: span 2;" />
     </div>
     <fieldset class="switch-pane">
       <input type="radio" class="color-switch" name="demo" id="option1" checked style="background: #1261ec;" onclick="document.getElementById('showcase').className='default'" />
