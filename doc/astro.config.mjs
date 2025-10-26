@@ -4,7 +4,7 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "yuto-hasegawa.github.io",
+	site: "https://yuto-hasegawa.github.io",
 	base: "/sashimi-ui",
 	integrations: [react(), mdx()],
 });
