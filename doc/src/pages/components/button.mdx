@@ -48,34 +48,34 @@ Buttons have variants based on their roles.
 `.icon` suits well with `.button`.
 
 <SamplePane>
-  <button class="button"><svg class="icon"><use href="/home.svg" /></svg>Home</button>
-  <button class="button secondary">Edit<svg class="icon"><use href="/edit.svg" /></svg></button>
-  <button class="button tertiary"><svg class="icon"><use href="/copy.svg" /></svg></button>
+  <button class="button"><svg class="icon"><use href={`${import.meta.env.BASE_URL}/home.svg`} /></svg>Home</button>
+  <button class="button secondary">Edit<svg class="icon"><use href={`${import.meta.env.BASE_URL}/edit.svg`} /></svg></button>
+  <button class="button tertiary"><svg class="icon"><use href={`${import.meta.env.BASE_URL}/copy.svg`} /></svg></button>
 </SamplePane>
 ```html
 <button class="button">
-  <svg class="icon"><use href="/home.svg" /></svg>
+  <svg class="icon"><use href={`${import.meta.env.BASE_URL}/home.svg`} /></svg>
   Home
 </button>
 <button class="button secondary">
   Edit
-  <svg class="icon"><use href="/edit.svg" /></svg>
+  <svg class="icon"><use href={`${import.meta.env.BASE_URL}/edit.svg`} /></svg>
 </button>
 <button class="button tertiary">
-  <svg class="icon"><use href="/copy.svg" /></svg>
+  <svg class="icon"><use href={`${import.meta.env.BASE_URL}/copy.svg`} /></svg>
 </button>
 ```
 
 ## States
 
 <SamplePane>
-  <button class="button" disabled><svg class="icon"><use href="/delete.svg" /></svg>Delete</button>
+  <button class="button" disabled><svg class="icon"><use href={`${import.meta.env.BASE_URL}/delete.svg`} /></svg>Delete</button>
   <button class="button secondary" disabled><progress class="progress circular icon" style="color: gray;" />Sending...</button>
 </SamplePane>
 
 ```html
 <button class="button" disabled>
-  <svg class="icon"><use href="/delete.svg" /></svg>
+  <svg class="icon"><use href={`${import.meta.env.BASE_URL}/delete.svg`} /></svg>
   Delete
 </button>
 <button class="button secondary" disabled>

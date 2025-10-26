@@ -24,7 +24,7 @@ It also works seamlessly alongside other sashimi UI classes like [`.button`](/co
 <SamplePane>
 <p style="margin: 0;"><picture class="icon"><source srcset="/saved_white.svg" media="(prefers-color-scheme: dark)"/><img src="/saved_black.svg" alt="" aria-hidden="true"/></picture>Settings have been saved.</p>
 <button class="button"><img class="icon" src="/delete_blue.svg" alt=""/>Delete</button>
-<h2 style="margin: 0;"><svg class="icon" stroke="currentColor"><use href="/diamond.svg" /></svg>Heading with an icon</h2>
+<h2 style="margin: 0;"><svg class="icon" stroke="currentColor"><use href={`${import.meta.env.BASE_URL}/diamond.svg`} /></svg>Heading with an icon</h2>
 </SamplePane>
 
 ```html
@@ -42,7 +42,7 @@ It also works seamlessly alongside other sashimi UI classes like [`.button`](/co
 </button>
 
 <h2>
-  <svg class="icon"><use href="/diamond.svg" /></svg>
+  <svg class="icon"><use href={`${import.meta.env.BASE_URL}/diamond.svg`} /></svg>
   Heading with an icon
 </h2>
 ```
@@ -71,7 +71,7 @@ Then reference them with `<use>` so the icon inherits color from CSS.
 <button class="button">
   <svg class="icon">
     <title>Icon title</title>
-    <use href="/icon.svg" />
+    <use href={`${import.meta.env.BASE_URL}/icon.svg`} />
   </svg>
   Button Text
 </button>
@@ -81,7 +81,7 @@ Then reference them with `<use>` so the icon inherits color from CSS.
   <button class="button primary">
     <svg class="icon">
       <title>Red Icon</title>
-      <use href="/diamond.svg" />
+      <use href={`${import.meta.env.BASE_URL}/diamond.svg`} />
     </svg>
     Primary
   </button>
@@ -89,7 +89,7 @@ Then reference them with `<use>` so the icon inherits color from CSS.
   <button class="button secondary">
     <svg class="icon">
       <title>Red Icon</title>
-      <use href="/diamond.svg" />
+      <use href={`${import.meta.env.BASE_URL}/diamond.svg`} />
     </svg>
     Secondary
   </button>
@@ -97,7 +97,7 @@ Then reference them with `<use>` so the icon inherits color from CSS.
   <button class="button tertiary">
     <svg class="icon">
       <title>Red Icon</title>
-      <use href="/diamond.svg" />
+      <use href={`${import.meta.env.BASE_URL}/diamond.svg`} />
     </svg>
     Tertiary
   </button>
@@ -105,7 +105,7 @@ Then reference them with `<use>` so the icon inherits color from CSS.
   <button class="button tertiary" style="color: salmon;">
     <svg class="icon">
       <title>Red Icon</title>
-      <use href="/diamond.svg" />
+      <use href={`${import.meta.env.BASE_URL}/diamond.svg`} />
     </svg>
     Custom color
   </button>

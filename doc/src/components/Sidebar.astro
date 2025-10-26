@@ -4,36 +4,36 @@ const path = Astro.url.pathname;
 
 <div class="wrapper">
   <div class="scroller">
-    <a href="/"><svg viewBox="0 0 1170 200" width="140" style="color: var(--sui-color-neutral-primary);"><use href="/logo.svg" /></svg></a>
+    <a href={`${import.meta.env.BASE_URL}/`}><svg viewBox="0 0 1170 200" width="140" style="color: var(--sui-color-neutral-primary);"><use href={`${import.meta.env.BASE_URL}/logo.svg`} /></svg></a>
 
     <ul class="list">
       <li>
-        <a class:list={["menu-item", { active: path === "/" }]} href="/"
+        <a class:list={["menu-item", { active: path === "/" }]} href={`${import.meta.env.BASE_URL}/`}
           >Introduction</a
         >
       </li>
       <li>
         <a
           class:list={["menu-item", { active: path === "/getting-started" }]}
-          href="/getting-started">Getting Started</a
+          href={`${import.meta.env.BASE_URL}/getting-started`}>Getting Started</a
         >
       </li>
       <li>
         <a
           class:list={["menu-item", { active: path === "/theming" }]}
-          href="/theming">Theming</a
+          href={`${import.meta.env.BASE_URL}/theming`}>Theming</a
         >
       </li>
       <li>
         <a
           class:list={["menu-item", { active: path === "/advanced" }]}
-          href="/advanced">Advanced</a
+          href={`${import.meta.env.BASE_URL}/advanced`}>Advanced</a
         >
       </li>
       <li>
         <a
           class:list={["menu-item", { active: path === "/troubleshooting" }]}
-          href="/troubleshooting">Troubleshooting</a
+          href={`${import.meta.env.BASE_URL}/troubleshooting`}>Troubleshooting</a
         >
       </li>
     </ul>
@@ -43,19 +43,19 @@ const path = Astro.url.pathname;
       <li>
         <a
           class:list={["menu-item", { active: path === "/components/button" }]}
-          href="/components/button">Button</a
+          href={`${import.meta.env.BASE_URL}/components/button`}>Button</a
         >
       </li>
       <li>
         <a
           class:list={["menu-item", { active: path === "/components/link" }]}
-          href="/components/link">Link</a
+          href={`${import.meta.env.BASE_URL}/components/link`}>Link</a
         >
       </li>
       <li>
         <a
           class:list={["menu-item", { active: path === "/components/card" }]}
-          href="/components/card">Card</a
+          href={`${import.meta.env.BASE_URL}/components/card`}>Card</a
         >
       </li>
       <li>
@@ -64,7 +64,7 @@ const path = Astro.url.pathname;
             "menu-item",
             { active: path === "/components/menu-item" },
           ]}
-          href="/components/menu-item">Menu Item</a
+          href={`${import.meta.env.BASE_URL}/components/menu-item`}>Menu Item</a
         >
       </li>
     </ul>
@@ -74,7 +74,7 @@ const path = Astro.url.pathname;
       <li>
         <a
           class:list={["menu-item", { active: path === "/components/input" }]}
-          href="/components/input">Input</a
+          href={`${import.meta.env.BASE_URL}/components/input`}>Input</a
         >
       </li>
       <li>
@@ -83,13 +83,13 @@ const path = Astro.url.pathname;
             "menu-item",
             { active: path === "/components/textarea" },
           ]}
-          href="/components/textarea">Textarea</a
+          href={`${import.meta.env.BASE_URL}/components/textarea`}>Textarea</a
         >
       </li>
       <li>
         <a
           class:list={["menu-item", { active: path === "/components/select" }]}
-          href="/components/select">Select</a
+          href={`${import.meta.env.BASE_URL}/components/select`}>Select</a
         >
       </li>
       <li>
@@ -98,31 +98,31 @@ const path = Astro.url.pathname;
             "menu-item",
             { active: path === "/components/checkbox" },
           ]}
-          href="/components/checkbox">Checkbox</a
+          href={`${import.meta.env.BASE_URL}/components/checkbox`}>Checkbox</a
         >
       </li>
       <li>
         <a
           class:list={["menu-item", { active: path === "/components/switch" }]}
-          href="/components/switch">Switch</a
+          href={`${import.meta.env.BASE_URL}/components/switch`}>Switch</a
         >
       </li>
       <li>
         <a
           class:list={["menu-item", { active: path === "/components/radio" }]}
-          href="/components/radio">Radio</a
+          href={`${import.meta.env.BASE_URL}/components/radio`}>Radio</a
         >
       </li>
       <li>
         <a
           class:list={["menu-item", { active: path === "/components/label" }]}
-          href="/components/label">Label</a
+          href={`${import.meta.env.BASE_URL}/components/label`}>Label</a
         >
       </li>
       <li>
         <a
           class:list={["menu-item", { active: path === "/components/legend" }]}
-          href="/components/legend">Legend</a
+          href={`${import.meta.env.BASE_URL}/components/legend`}>Legend</a
         >
       </li>
       <li>
@@ -131,7 +131,7 @@ const path = Astro.url.pathname;
             "menu-item",
             { active: path === "/components/helper-text" },
           ]}
-          href="/components/helper-text">Helper Text</a
+          href={`${import.meta.env.BASE_URL}/components/helper-text`}>Helper Text</a
         >
       </li>
       <li>
@@ -140,7 +140,7 @@ const path = Astro.url.pathname;
             "menu-item",
             { active: path === "/components/fieldset" },
           ]}
-          href="/components/fieldset">Fieldset</a
+          href={`${import.meta.env.BASE_URL}/components/fieldset`}>Fieldset</a
         >
       </li>
     </ul>
@@ -150,13 +150,13 @@ const path = Astro.url.pathname;
       <li>
         <a
           class:list={["menu-item", { active: path === "/components/icon" }]}
-          href="/components/icon">Icon</a
+          href={`${import.meta.env.BASE_URL}/components/icon`}>Icon</a
         >
       </li>
       <li>
         <a
           class:list={["menu-item", { active: path === "/components/table" }]}
-          href="/components/table">Table</a
+          href={`${import.meta.env.BASE_URL}/components/table`}>Table</a
         >
       </li>
       <li>
@@ -165,13 +165,13 @@ const path = Astro.url.pathname;
             "menu-item",
             { active: path === "/components/key-value" },
           ]}
-          href="/components/key-value">Key-Value</a
+          href={`${import.meta.env.BASE_URL}/components/key-value`}>Key-Value</a
         >
       </li>
       <li>
         <a
           class:list={["menu-item", { active: path === "/components/dialog" }]}
-          href="/components/dialog">Dialog</a
+          href={`${import.meta.env.BASE_URL}/components/dialog`}>Dialog</a
         >
       </li>
       <li>
@@ -180,7 +180,7 @@ const path = Astro.url.pathname;
             "menu-item",
             { active: path === "/components/progress" },
           ]}
-          href="/components/progress">Progress</a
+          href={`${import.meta.env.BASE_URL}/components/progress`}>Progress</a
         >
       </li>
     </ul>

@@ -32,7 +32,7 @@ const { style } = Astro.props;
       Open Dialog
       <svg class="icon">
         <title>Info</title>
-        <use href="/info.svg" />
+        <use href={`${import.meta.env.BASE_URL}/info.svg`} />
       </svg>
     </button>
   </div>
