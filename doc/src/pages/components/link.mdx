@@ -52,12 +52,12 @@ import SamplePane from "../../components/SamplePane.astro";
 `.icon` suits well with `.link`.
 
 <SamplePane>
-  <a class="link" href="https://github.com" target="_blank">GitHub.com<svg class="icon"><use href={`${import.meta.env.BASE_URL}/open_in_new.svg`} /></svg></a>
+  <a class="link" href="https://github.com" target="_blank">GitHub.com<svg class="icon"><use href={`${import.meta.env.BASE_URL}/open_in_new.svg#root`} /></svg></a>
 </SamplePane>
 
 ```html
 <a class="link" href="https://github.com" target="_blank">
   GitHub.com
-  <svg class="icon"><use href={`${import.meta.env.BASE_URL}/open_in_new.svg`} /></svg>
+  <svg class="icon"><use href={`${import.meta.env.BASE_URL}/open_in_new.svg#root`} /></svg>
 </a>
 ```

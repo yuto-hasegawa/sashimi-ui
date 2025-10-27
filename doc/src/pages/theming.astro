@@ -25,10 +25,10 @@ import SamplePane from "../components/SamplePane.astro";
   <h3>Nesting themes</h3>
   <p>CSS variables support nested overrides, so you can switch themes within specific elements.</p>
   <SamplePane style="display: block;">
-    Japanese theme <a href="" class="link">example link<svg class="icon"><use href={`${import.meta.env.BASE_URL}/info.svg`}/></svg></a>
+    Japanese theme <a href="" class="link">example link<svg class="icon"><use href={`${import.meta.env.BASE_URL}/info.svg#root`}/></svg></a>
     <button class="button">Button</button>
     <div class="kawasaki" style="margin-top: 8px;">
-      Kawasaki theme <a href="" class="link">example link<svg class="icon"><use href={`${import.meta.env.BASE_URL}/info.svg`}/></svg></a>
+      Kawasaki theme <a href="" class="link">example link<svg class="icon"><use href={`${import.meta.env.BASE_URL}/info.svg#root`}/></svg></a>
       <button class="button">Button</button>
     </div>
   </SamplePane>
