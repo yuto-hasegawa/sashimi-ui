@@ -59,7 +59,7 @@ svg {
 
 .astro-code {
 	padding: 16px;
-	border-radius: var(--sui-roundness);
+	border-radius: var(--sui-roundness-normal);
 	font-family: "Source Code Pro", monospace;
 }
 
@@ -74,5 +74,5 @@ blockquote {
 	padding: 16px;
 	margin: 0;
 	background: rgb(255 237 117 / 15%);
-	border-radius: var(--sui-roundness);
+	border-radius: var(--sui-roundness-normal);
 }

@@ -103,7 +103,7 @@ export default function Oshinagaki({ style }: Props) {
 					<button type="button" className="button tertiary">
 						<svg className="icon">
 							<title>Cart</title>
-							<use href={`${import.meta.env.BASE_URL}/cart.svg`} />
+							<use href={`${import.meta.env.BASE_URL}/cart.svg#root`} />
 						</svg>
 						Add to Cart
 					</button>
