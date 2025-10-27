@@ -103,14 +103,14 @@ export default function Oshinagaki({ style }: Props) {
 					<button type="button" className="button tertiary">
 						<svg className="icon">
 							<title>Cart</title>
-							<use href={`${import.meta.env.BASE_URL}/cart.svg#root`} />
+							<use href={`${import.meta.env.BASE_URL}cart.svg#root`} />
 						</svg>
 						Add to Cart
 					</button>
 					<button type="button" className="button primary">
 						<svg className="icon">
 							<title>Payment</title>
-							<use href={`${import.meta.env.BASE_URL}/payment.svg#root`} />
+							<use href={`${import.meta.env.BASE_URL}payment.svg#root`} />
 						</svg>
 						Order Now
 					</button>
@@ -139,7 +139,7 @@ const CONTENTS: Record<
 					akami
 					<svg className="icon">
 						<title>Open in new tab</title>
-						<use href={`${import.meta.env.BASE_URL}/open_in_new.svg#root`} />
+						<use href={`${import.meta.env.BASE_URL}open_in_new.svg#root`} />
 					</svg>
 				</a>
 				,{" "}
@@ -152,7 +152,7 @@ const CONTENTS: Record<
 					toro
 					<svg className="icon">
 						<title>Open in new tab</title>
-						<use href={`${import.meta.env.BASE_URL}/open_in_new.svg#root`} />
+						<use href={`${import.meta.env.BASE_URL}open_in_new.svg#root`} />
 					</svg>
 				</a>
 				.

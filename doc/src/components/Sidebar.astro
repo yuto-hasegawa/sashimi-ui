@@ -4,36 +4,36 @@ const path = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
 
 <div class="wrapper">
   <div class="scroller">
-    <a href={`${import.meta.env.BASE_URL}/`}><svg viewBox="0 0 1170 200" width="140" style="color: var(--sui-color-neutral-primary);"><use href={`${import.meta.env.BASE_URL}/logo.svg#root`} /></svg></a>
+    <a href={`${import.meta.env.BASE_URL}`}><svg viewBox="0 0 1170 200" width="140" style="color: var(--sui-color-neutral-primary);"><use href={`${import.meta.env.BASE_URL}logo.svg#root`} /></svg></a>
 
     <ul class="list">
       <li>
-        <a class:list={["menu-item", { active: path === "/" }]} href={`${import.meta.env.BASE_URL}/`}
+        <a class:list={["menu-item", { active: path === "" }]} href={`${import.meta.env.BASE_URL}`}
           >Introduction</a
         >
       </li>
       <li>
         <a
-          class:list={["menu-item", { active: path === "/getting-started" }]}
-          href={`${import.meta.env.BASE_URL}/getting-started`}>Getting Started</a
+          class:list={["menu-item", { active: path === "getting-started/" }]}
+          href={`${import.meta.env.BASE_URL}getting-started/`}>Getting Started</a
         >
       </li>
       <li>
         <a
-          class:list={["menu-item", { active: path === "/theming" }]}
-          href={`${import.meta.env.BASE_URL}/theming`}>Theming</a
+          class:list={["menu-item", { active: path === "theming/" }]}
+          href={`${import.meta.env.BASE_URL}theming/`}>Theming</a
         >
       </li>
       <li>
         <a
-          class:list={["menu-item", { active: path === "/advanced" }]}
-          href={`${import.meta.env.BASE_URL}/advanced`}>Advanced</a
+          class:list={["menu-item", { active: path === "advanced/" }]}
+          href={`${import.meta.env.BASE_URL}advanced/`}>Advanced</a
         >
       </li>
       <li>
         <a
-          class:list={["menu-item", { active: path === "/troubleshooting" }]}
-          href={`${import.meta.env.BASE_URL}/troubleshooting`}>Troubleshooting</a
+          class:list={["menu-item", { active: path === "troubleshooting/" }]}
+          href={`${import.meta.env.BASE_URL}troubleshooting/`}>Troubleshooting</a
         >
       </li>
     </ul>
@@ -42,29 +42,29 @@ const path = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
     <ul class="list">
       <li>
         <a
-          class:list={["menu-item", { active: path === "/components/button" }]}
-          href={`${import.meta.env.BASE_URL}/components/button`}>Button</a
+          class:list={["menu-item", { active: path === "components/button/" }]}
+          href={`${import.meta.env.BASE_URL}components/button/`}>Button</a
         >
       </li>
       <li>
         <a
-          class:list={["menu-item", { active: path === "/components/link" }]}
-          href={`${import.meta.env.BASE_URL}/components/link`}>Link</a
+          class:list={["menu-item", { active: path === "components/link/" }]}
+          href={`${import.meta.env.BASE_URL}components/link/`}>Link</a
         >
       </li>
       <li>
         <a
-          class:list={["menu-item", { active: path === "/components/card" }]}
-          href={`${import.meta.env.BASE_URL}/components/card`}>Card</a
+          class:list={["menu-item", { active: path === "components/card/" }]}
+          href={`${import.meta.env.BASE_URL}components/card/`}>Card</a
         >
       </li>
       <li>
         <a
           class:list={[
             "menu-item",
-            { active: path === "/components/menu-item" },
+            { active: path === "components/menu-item/" },
           ]}
-          href={`${import.meta.env.BASE_URL}/components/menu-item`}>Menu Item</a
+          href={`${import.meta.env.BASE_URL}components/menu-item/`}>Menu Item</a
         >
       </li>
     </ul>
@@ -73,74 +73,74 @@ const path = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
     <ul class="list">
       <li>
         <a
-          class:list={["menu-item", { active: path === "/components/input" }]}
-          href={`${import.meta.env.BASE_URL}/components/input`}>Input</a
+          class:list={["menu-item", { active: path === "components/input/" }]}
+          href={`${import.meta.env.BASE_URL}components/input/`}>Input</a
         >
       </li>
       <li>
         <a
           class:list={[
             "menu-item",
-            { active: path === "/components/textarea" },
+            { active: path === "components/textarea/" },
           ]}
-          href={`${import.meta.env.BASE_URL}/components/textarea`}>Textarea</a
+          href={`${import.meta.env.BASE_URL}components/textarea/`}>Textarea</a
         >
       </li>
       <li>
         <a
-          class:list={["menu-item", { active: path === "/components/select" }]}
-          href={`${import.meta.env.BASE_URL}/components/select`}>Select</a
+          class:list={["menu-item", { active: path === "components/select/" }]}
+          href={`${import.meta.env.BASE_URL}components/select/`}>Select</a
         >
       </li>
       <li>
         <a
           class:list={[
             "menu-item",
-            { active: path === "/components/checkbox" },
+            { active: path === "components/checkbox/" },
           ]}
-          href={`${import.meta.env.BASE_URL}/components/checkbox`}>Checkbox</a
+          href={`${import.meta.env.BASE_URL}components/checkbox/`}>Checkbox</a
         >
       </li>
       <li>
         <a
-          class:list={["menu-item", { active: path === "/components/switch" }]}
-          href={`${import.meta.env.BASE_URL}/components/switch`}>Switch</a
+          class:list={["menu-item", { active: path === "components/switch/" }]}
+          href={`${import.meta.env.BASE_URL}components/switch/`}>Switch</a
         >
       </li>
       <li>
         <a
-          class:list={["menu-item", { active: path === "/components/radio" }]}
-          href={`${import.meta.env.BASE_URL}/components/radio`}>Radio</a
+          class:list={["menu-item", { active: path === "components/radio/" }]}
+          href={`${import.meta.env.BASE_URL}components/radio/`}>Radio</a
         >
       </li>
       <li>
         <a
-          class:list={["menu-item", { active: path === "/components/label" }]}
-          href={`${import.meta.env.BASE_URL}/components/label`}>Label</a
+          class:list={["menu-item", { active: path === "components/label/" }]}
+          href={`${import.meta.env.BASE_URL}components/label/`}>Label</a
         >
       </li>
       <li>
         <a
-          class:list={["menu-item", { active: path === "/components/legend" }]}
-          href={`${import.meta.env.BASE_URL}/components/legend`}>Legend</a
+          class:list={["menu-item", { active: path === "components/legend/" }]}
+          href={`${import.meta.env.BASE_URL}components/legend/`}>Legend</a
         >
       </li>
       <li>
         <a
           class:list={[
             "menu-item",
-            { active: path === "/components/helper-text" },
+            { active: path === "components/helper-text/" },
           ]}
-          href={`${import.meta.env.BASE_URL}/components/helper-text`}>Helper Text</a
+          href={`${import.meta.env.BASE_URL}components/helper-text/`}>Helper Text</a
         >
       </li>
       <li>
         <a
           class:list={[
             "menu-item",
-            { active: path === "/components/fieldset" },
+            { active: path === "components/fieldset/" },
           ]}
-          href={`${import.meta.env.BASE_URL}/components/fieldset`}>Fieldset</a
+          href={`${import.meta.env.BASE_URL}components/fieldset/`}>Fieldset</a
         >
       </li>
     </ul>
@@ -149,38 +149,38 @@ const path = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
     <ul class="list">
       <li>
         <a
-          class:list={["menu-item", { active: path === "/components/icon" }]}
-          href={`${import.meta.env.BASE_URL}/components/icon`}>Icon</a
+          class:list={["menu-item", { active: path === "components/icon/" }]}
+          href={`${import.meta.env.BASE_URL}components/icon/`}>Icon</a
         >
       </li>
       <li>
         <a
-          class:list={["menu-item", { active: path === "/components/table" }]}
-          href={`${import.meta.env.BASE_URL}/components/table`}>Table</a
-        >
-      </li>
-      <li>
-        <a
-          class:list={[
-            "menu-item",
-            { active: path === "/components/key-value" },
-          ]}
-          href={`${import.meta.env.BASE_URL}/components/key-value`}>Key-Value</a
-        >
-      </li>
-      <li>
-        <a
-          class:list={["menu-item", { active: path === "/components/dialog" }]}
-          href={`${import.meta.env.BASE_URL}/components/dialog`}>Dialog</a
+          class:list={["menu-item", { active: path === "components/table/" }]}
+          href={`${import.meta.env.BASE_URL}components/table/`}>Table</a
         >
       </li>
       <li>
         <a
           class:list={[
             "menu-item",
-            { active: path === "/components/progress" },
+            { active: path === "components/key-value/" },
           ]}
-          href={`${import.meta.env.BASE_URL}/components/progress`}>Progress</a
+          href={`${import.meta.env.BASE_URL}components/key-value/`}>Key-Value</a
+        >
+      </li>
+      <li>
+        <a
+          class:list={["menu-item", { active: path === "components/dialog/" }]}
+          href={`${import.meta.env.BASE_URL}components/dialog/`}>Dialog</a
+        >
+      </li>
+      <li>
+        <a
+          class:list={[
+            "menu-item",
+            { active: path === "components/progress/" },
+          ]}
+          href={`${import.meta.env.BASE_URL}components/progress/`}>Progress</a
         >
       </li>
     </ul>

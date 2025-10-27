@@ -22,27 +22,27 @@ It also works seamlessly alongside other sashimi UI classes like [`.button`](/co
 
 
 <SamplePane>
-<p style="margin: 0;"><picture class="icon"><source srcset={`${import.meta.env.BASE_URL}/saved_white.svg#root`} media="(prefers-color-scheme: dark)"/><img src={`${import.meta.env.BASE_URL}/saved_black.svg#root`} alt="" aria-hidden="true"/></picture>Settings have been saved.</p>
-<button class="button"><img class="icon" src={`${import.meta.env.BASE_URL}/delete_blue.svg#root`} alt=""/>Delete</button>
-<h2 style="margin: 0;"><svg class="icon" stroke="currentColor"><use href={`${import.meta.env.BASE_URL}/diamond.svg#root`} /></svg>Heading with an icon</h2>
+<p style="margin: 0;"><picture class="icon"><source srcset={`${import.meta.env.BASE_URL}saved_white.svg#root`} media="(prefers-color-scheme: dark)"/><img src={`${import.meta.env.BASE_URL}saved_black.svg#root`} alt="" aria-hidden="true"/></picture>Settings have been saved.</p>
+<button class="button"><img class="icon" src={`${import.meta.env.BASE_URL}delete_blue.svg#root`} alt=""/>Delete</button>
+<h2 style="margin: 0;"><svg class="icon" stroke="currentColor"><use href={`${import.meta.env.BASE_URL}diamond.svg#root`} /></svg>Heading with an icon</h2>
 </SamplePane>
 
 ```html
 <p>
   <picture class="icon">
     <source srcset="/saved_white.svg#root" media="(prefers-color-scheme: dark)"/>
-    <img src={`${import.meta.env.BASE_URL}/saved_black.svg#root`} alt="" aria-hidden="true"/>
+    <img src={`${import.meta.env.BASE_URL}saved_black.svg#root`} alt="" aria-hidden="true"/>
   </picture>
   Settings have been saved.
 </p>
 
 <button class="button">
-  <img class="icon" src={`${import.meta.env.BASE_URL}/delete_blue.svg#root`} alt=""/>
+  <img class="icon" src={`${import.meta.env.BASE_URL}delete_blue.svg#root`} alt=""/>
   Delete
 </button>
 
 <h2>
-  <svg class="icon"><use href={`${import.meta.env.BASE_URL}/diamond.svg#root`} /></svg>
+  <svg class="icon"><use href={`${import.meta.env.BASE_URL}diamond.svg#root`} /></svg>
   Heading with an icon
 </h2>
 ```
@@ -71,7 +71,7 @@ Then reference them with `<use>` so the icon inherits color from CSS.
 <button class="button">
   <svg class="icon">
     <title>Icon title</title>
-    <use href={`${import.meta.env.BASE_URL}/icon.svg#root`} />
+    <use href={`${import.meta.env.BASE_URL}icon.svg#root`} />
   </svg>
   Button Text
 </button>
@@ -81,7 +81,7 @@ Then reference them with `<use>` so the icon inherits color from CSS.
   <button class="button primary">
     <svg class="icon">
       <title>Red Icon</title>
-      <use href={`${import.meta.env.BASE_URL}/diamond.svg#root`} />
+      <use href={`${import.meta.env.BASE_URL}diamond.svg#root`} />
     </svg>
     Primary
   </button>
@@ -89,7 +89,7 @@ Then reference them with `<use>` so the icon inherits color from CSS.
   <button class="button secondary">
     <svg class="icon">
       <title>Red Icon</title>
-      <use href={`${import.meta.env.BASE_URL}/diamond.svg#root`} />
+      <use href={`${import.meta.env.BASE_URL}diamond.svg#root`} />
     </svg>
     Secondary
   </button>
@@ -97,7 +97,7 @@ Then reference them with `<use>` so the icon inherits color from CSS.
   <button class="button tertiary">
     <svg class="icon">
       <title>Red Icon</title>
-      <use href={`${import.meta.env.BASE_URL}/diamond.svg#root`} />
+      <use href={`${import.meta.env.BASE_URL}diamond.svg#root`} />
     </svg>
     Tertiary
   </button>
@@ -105,7 +105,7 @@ Then reference them with `<use>` so the icon inherits color from CSS.
   <button class="button tertiary" style="color: salmon;">
     <svg class="icon">
       <title>Red Icon</title>
-      <use href={`${import.meta.env.BASE_URL}/diamond.svg#root`} />
+      <use href={`${import.meta.env.BASE_URL}diamond.svg#root`} />
     </svg>
     Custom color
   </button>
