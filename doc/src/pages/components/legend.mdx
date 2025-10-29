@@ -17,15 +17,17 @@ import SamplePane from "../../components/SamplePane.astro";
 
 <SamplePane>
 <fieldset class="fieldset">
-  <legend class="legend">Name</legend>
-  <input class="input" placeholder="Yuto Hasegawa" />
+  <legend class="legend">Seat</legend>
+  <label class="label"><input type="radio" name="seat" value="counter" class="radio" checked />Counter</label>
+  <label class="label"><input type="radio" name="seat" value="table" class="radio" />Table</label>  
 </fieldset>
 </SamplePane>
 
 ```html
 <fieldset class="fieldset">
-  <legend class="legend">Name</legend>
-  <input class="input" placeholder="Yuto Hasegawa" />
+  <legend class="legend">Seat</legend>
+  <label class="label"><input type="radio" name="seat" value="counter" class="radio" checked />Counter</label>
+  <label class="label"><input type="radio" name="seat" value="table" class="radio" />Table</label>  
 </fieldset>
 ```
 
@@ -34,20 +36,22 @@ import SamplePane from "../../components/SamplePane.astro";
 <SamplePane>
 <fieldset class="fieldset">
   <legend class="legend error">Name</legend>
-  <input class="input error" value="123456" />
+  <label class="label error">Sei <input class="input error" value="Hasegawa" /></label>
+  <label class="label error">Mei <input class="input error" value="Yuto" /></label>  
 </fieldset>
 </SamplePane>
 
 ```html
 <fieldset class="fieldset">
   <legend class="legend error">Name</legend>
-  <input class="input error" value="123456" />
+  <label class="label error">Sei <input class="input error" value="Hasegawa" /></label>
+  <label class="label error">Mei <input class="input error" value="Yuto" /></label>  
 </fieldset>
 ```
 
 ## React component
 
-React component `Legend` is available.  
-It inherits the error property from a [`Fieldset`](/components/fieldset) component and automatically applies the error style.  
+React component `<Legend/>` is available.  
+It inherits the error property from a <a href={`${import.meta.env.BASE_URL}components/fieldset/`}>`Fieldset`</a> component and automatically applies the error style.  
   
 ※ The disabled state is automatically inherited through the native HTML feature.

@@ -21,6 +21,9 @@ They only enhance functionality — **no extra markup or wrapper elements** are 
 </SamplePane>
 
 ```jsx
+import { Dialog } from "sashimi-ui/react";
+
+// inside your component
 <button ref={buttonRef} className="button" type="button" onClick={() => setOpen(true)}>
   Menu
 </button>
@@ -32,8 +35,8 @@ They only enhance functionality — **no extra markup or wrapper elements** are 
 ```
 
 For example, the `<Dialog/>` component makes it possible to control the native `<dialog/>` element declaratively.  
-Normally, a `<dialog/>` can only be opened imperatively with the element.showModal() method.  
+Normally, a `<dialog/>` can only be opened imperatively with the `element.showModal()` method.  
 With the open prop, you can manage its state directly in React, making it easier to work with.  
-You can also specify an anchorEl to position it like a menu.    
+You can also specify an `anchorEl` to position it like a menu.    
 
 **A `<Dialog/>` component always renders a single `<dialog>` element**, nothing more.<br/>

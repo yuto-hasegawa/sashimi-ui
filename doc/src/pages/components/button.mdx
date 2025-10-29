@@ -8,7 +8,7 @@ import "./_button.css";
 
 # Button
 
-`.button` makes elements look like a button.
+`.button` makes elements **look like** a button.
 
 ## Applicable Elements
 
@@ -54,15 +54,17 @@ Buttons have variants based on their roles.
 </SamplePane>
 ```html
 <button class="button">
-  <svg class="icon"><use href={`${import.meta.env.BASE_URL}home.svg#root`} /></svg>
+  <svg class="icon"><use href="/home.svg#root" /></svg>
   Home
 </button>
+
 <button class="button secondary">
   Edit
-  <svg class="icon"><use href={`${import.meta.env.BASE_URL}edit.svg#root`} /></svg>
+  <svg class="icon"><use href="/edit.svg#root" /></svg>
 </button>
+
 <button class="button tertiary">
-  <svg class="icon"><use href={`${import.meta.env.BASE_URL}copy.svg#root`} /></svg>
+  <svg class="icon"><use href="/copy.svg#root" /></svg>
 </button>
 ```
 
@@ -75,9 +77,10 @@ Buttons have variants based on their roles.
 
 ```html
 <button class="button" disabled>
-  <svg class="icon"><use href={`${import.meta.env.BASE_URL}delete.svg#root`} /></svg>
+  <svg class="icon"><use href="/delete.svg#root" /></svg>
   Delete
 </button>
+
 <button class="button secondary" disabled>
   <progress class="progress circular icon" style="color: gray;" />
   Sending...
@@ -119,4 +122,4 @@ Write your own CSS and it just works!
 
 ### I don't want ripple effects
 
-You can set `--sui-button-ripple-effect-content` to `none`.
+You can set `--sui-button-ripple-effect-content` to `none` in your theme.

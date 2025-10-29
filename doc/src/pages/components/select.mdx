@@ -42,6 +42,7 @@ import SamplePane from "../../components/SamplePane.astro";
   <option value="akami">Akami</option>
   <option value="salmon">Salmon</option>
 </select>
+
 <select class="select" disabled>
   <option value="akami">Akami</option>
   <option value="salmon">Salmon</option>
@@ -50,8 +51,8 @@ import SamplePane from "../../components/SamplePane.astro";
 
 ## React component
 
-React component `Select` is available.  
-It inherits the error property from a [`Fieldset`](/components/fieldset) component and automatically applies the error style.  
+React component `<Select/>` is available.  
+It inherits the error property from a <a href={`${import.meta.env.BASE_URL}components/fieldset/`}>`Fieldset`</a> component and automatically applies the error style.  
   
 ※ The disabled state is automatically inherited through the native HTML feature.
 
@@ -60,9 +61,9 @@ It inherits the error property from a [`Fieldset`](/components/fieldset) compone
 ### How Can I customize option style?
 
 Customizing option style is not supported by CSS.  
-It is recommended to use native options for accessibility.
+It is recommended to **use native option pickers** for accessibility.
 
 ### How to customize the bold line that appears when focused?
 
 You can set `outline` property in CSS.  
-Though it is recommended to leave it as default for accessibility.
+Though it is recommended to **leave it as default** for accessibility.

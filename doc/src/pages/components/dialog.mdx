@@ -9,7 +9,7 @@ import DialogUsagePopover from "../../components/usages/dialog_popover"
 
 # Dialog
 
-`.dialog` is for html dialog.
+`.dialog` is for html `dialog`.
 
 ## Applicable Elements
 
@@ -35,13 +35,14 @@ import DialogUsagePopover from "../../components/usages/dialog_popover"
 
 ## React Component
 
-React component `Dialog` is available.  
+React component `<Dialog/>` is available.  
 It has following features:
 
 - Visibility is controlled by **`open` prop**. You don't need to call `showModal()` or `close()` imperatively.
 - Anchor element can be specified. It works not only as **modal**, but also as **popover**.
 - React Portal is used to render dialog in front of other elements.
 - Click away handler.
+- No wrapper elements are introduced. A single `<dialog>` element is rendered.
 
 ### Modal style
 

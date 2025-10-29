@@ -55,6 +55,7 @@ import SamplePane from "../../components/SamplePane.astro";
   <label class="label error"><input class="radio error" type="radio" name="drink" checked />Tea</label>
   <label class="label error"><input class="radio error" type="radio" name="drink" />Beer</label>
 </fieldset>
+
 <fieldset className="fieldset" disabled>
   <label class="label"><input class="radio" type="radio" name="seasoning" checked />Soy Sauce</label>
   <label class="label"><input class="radio" type="radio" name="seasoning" />Salt</label>
@@ -63,8 +64,8 @@ import SamplePane from "../../components/SamplePane.astro";
 
 ## React component
 
-React component `Input` is available.  
-It inherits the error property from a [`Fieldset`](/components/fieldset) component and automatically applies the error style.  
+React component `<Input/>` is available.  
+It inherits the error property from a <a href={`${import.meta.env.BASE_URL}components/fieldset/`}>`Fieldset`</a> component and automatically applies the error style.  
   
 ※ The disabled state is automatically inherited through the native HTML feature.
 
@@ -73,4 +74,4 @@ It inherits the error property from a [`Fieldset`](/components/fieldset) compone
 ### How to customize the bold line that appears when focused?
 
 You can set `outline` property in CSS.  
-Though it is recommended to leave it as default for accessibility.
+Though it is recommended to **leave it as default** for accessibility.

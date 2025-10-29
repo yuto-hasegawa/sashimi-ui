@@ -7,7 +7,7 @@ import SamplePane from "../../components/SamplePane.astro";
 
 # Switch
 
-`.switch` makes `input[type="checkbox"]` look like a switch.
+`.switch` makes `input[type="checkbox"]` **look like** a switch.
 
 ## Applicable Elements
 
@@ -28,6 +28,7 @@ import SamplePane from "../../components/SamplePane.astro";
   Use wasabi
   <input class="switch" type="checkbox" />
 </label>
+
 <div>
   <label class="label" for="sushi">Sushi mode</label>
   <input class="switch" type="checkbox" id="sushi" checked />
@@ -46,6 +47,7 @@ import SamplePane from "../../components/SamplePane.astro";
   Use wasabi
   <input class="switch error" type="checkbox" />
 </label>
+
 <label class="label">
   Sushi mode
   <input class="switch" type="checkbox" disabled checked />
@@ -54,8 +56,8 @@ import SamplePane from "../../components/SamplePane.astro";
 
 ## React component
 
-React component `Input` is available.  
-It inherits the error property from a [`Fieldset`](/components/fieldset) component and automatically applies the error style.  
+React component `<Input/>` is available.  
+It inherits the error property from a <a href={`${import.meta.env.BASE_URL}components/fieldset/`}>`Fieldset`</a> component and automatically applies the error style.  
   
 ※ The disabled state is automatically inherited through the native HTML feature.
 
@@ -64,4 +66,4 @@ It inherits the error property from a [`Fieldset`](/components/fieldset) compone
 ### How to customize the bold line that appears when focused?
 
 You can set `outline` property in CSS.  
-Though it is recommended to leave it as default for accessibility.
+Though it is recommended to **leave it as default** for accessibility.

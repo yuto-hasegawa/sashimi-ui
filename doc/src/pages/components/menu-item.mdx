@@ -7,7 +7,7 @@ import SamplePane from "../../components/SamplePane.astro";
 
 # Menu Item
 
-`.menu-item` makes elements look like a menu item.
+`.menu-item` makes elements **look like** a menu item.
 
 ## Applicable Elements
 
@@ -57,15 +57,15 @@ import SamplePane from "../../components/SamplePane.astro";
 `.icon` sits well with `.menu-item`.
 
 <SamplePane filled>
-  <ul class="card" style="width: fit-content;">
+  <ul class="card" style="width: fit-content; list-style: none;">
     <li><a class="menu-item" href="#combination"><svg class="icon"><use href={`${import.meta.env.BASE_URL}signin.svg#root`} /></svg>Sign in</a></li>
     <li><button class="menu-item"><svg class="icon"><use href={`${import.meta.env.BASE_URL}share.svg#root`} /></svg>Share with friends</button></li>
   </ul>
 </SamplePane>
 
 ```html
-<ul class="card" style="width: fit-content;">
-  <li><a class="menu-item" href="#combination"><img class="icon" src={`${import.meta.env.BASE_URL}sign_in.svg#root`} />Sign in</a></li>
-  <li><button class="menu-item"><img class="icon" src={`${import.meta.env.BASE_URL}share.svg#root`} />Share with friends</button></li>
+<ul class="card" style="width: fit-content; list-style: none;">
+  <li><a class="menu-item" href="#combination"><img class="icon" src="/sign_in.svg#root" />Sign in</a></li>
+  <li><button class="menu-item"><img class="icon" src="/share.svg#root" />Share with friends</button></li>
 </ul>
 ```

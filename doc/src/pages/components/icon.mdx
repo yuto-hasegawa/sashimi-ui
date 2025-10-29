@@ -18,33 +18,33 @@ import SamplePane from "../../components/SamplePane.astro";
 ## Basic Usage
 
 `.icon` sits well in text elements such as `<p>` or `<h1>`.  
-It also works seamlessly alongside other sashimi UI classes like [`.button`](/components/button), [`.link`](/components/link) and [`.menu-item`](/components/menu-item).
+It also works seamlessly alongside other sashimi UI classes like <a href={`${import.meta.env.BASE_URL}components/button/`}>`.button`</a>, <a href={`${import.meta.env.BASE_URL}components/link/`}>`.link`</a> and <a href={`${import.meta.env.BASE_URL}components/menu-item/`}>`.menu-item`</a>.
 
 
 <SamplePane>
-<p style="margin: 0;"><picture class="icon"><source srcset={`${import.meta.env.BASE_URL}saved_white.svg#root`} media="(prefers-color-scheme: dark)"/><img src={`${import.meta.env.BASE_URL}saved_black.svg#root`} alt="" aria-hidden="true"/></picture>Settings have been saved.</p>
-<button class="button"><img class="icon" src={`${import.meta.env.BASE_URL}delete_blue.svg#root`} alt=""/>Delete</button>
 <h2 style="margin: 0;"><svg class="icon" stroke="currentColor"><use href={`${import.meta.env.BASE_URL}diamond.svg#root`} /></svg>Heading with an icon</h2>
+<button class="button"><img class="icon" src={`${import.meta.env.BASE_URL}delete_blue.svg#root`} alt=""/>Delete</button>
+<p style="margin: 0;"><picture class="icon"><source srcset={`${import.meta.env.BASE_URL}saved_white.svg#root`} media="(prefers-color-scheme: dark)"/><img src={`${import.meta.env.BASE_URL}saved_black.svg#root`} alt="" aria-hidden="true"/></picture>Settings have been saved.</p>
 </SamplePane>
 
 ```html
-<p>
-  <picture class="icon">
-    <source srcset="/saved_white.svg#root" media="(prefers-color-scheme: dark)"/>
-    <img src={`${import.meta.env.BASE_URL}saved_black.svg#root`} alt="" aria-hidden="true"/>
-  </picture>
-  Settings have been saved.
-</p>
+<h2>
+  <svg class="icon"><use href="/diamond.svg#root" /></svg>
+  Heading with an icon
+</h2>
 
 <button class="button">
-  <img class="icon" src={`${import.meta.env.BASE_URL}delete_blue.svg#root`} alt=""/>
+  <img class="icon" src="/delete_blue.svg#root" alt=""/>
   Delete
 </button>
 
-<h2>
-  <svg class="icon"><use href={`${import.meta.env.BASE_URL}diamond.svg#root`} /></svg>
-  Heading with an icon
-</h2>
+<p>
+  <picture class="icon">
+    <source srcset="/saved_white.svg#root" media="(prefers-color-scheme: dark)"/>
+    <img src="/saved_black.svg#root" alt="" aria-hidden="true"/>
+  </picture>
+  Settings have been saved.
+</p>
 ```
 
 ## Tinting Icons
@@ -53,12 +53,14 @@ sashimi UI does **NOT** provide a built-in icon recoloring feature.
 we recommend using SVGs for icon coloring.
 
 Prepare SVGs that have no fixed width/height, and whose fill or stroke are `currentColor`.  
+Make sure it has an element with an `id`.  
 Then reference them with `<use>` so the icon inherits color from CSS.
 
 ```xml
 <!-- icon.svg -->
 <svg
   xmlns="http://www.w3.org/2000/svg"
+  id="root"
   viewBox="0 -960 960 960"
   fill="currentColor"
 >
@@ -70,8 +72,8 @@ Then reference them with `<use>` so the icon inherits color from CSS.
 <!-- index.html -->
 <button class="button">
   <svg class="icon">
-    <title>Icon title</title>
-    <use href={`${import.meta.env.BASE_URL}icon.svg#root`} />
+    <title>alt text</title>
+    <use href="/icon.svg#root" />
   </svg>
   Button Text
 </button>

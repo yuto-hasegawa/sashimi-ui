@@ -68,7 +68,7 @@
 	background: linear-gradient(
 		0.28turn,
 		transparent 20%,
-		var(--sui-color-highlight-secondary) 50%,
+		var(--sui-color-highlight-primary) 50%,
 		transparent 80%
 	);
 }

@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
 	Fieldset,
-	Label,
-	Input,
 	HelperText,
-	Textarea,
-	Select,
+	Input,
+	Label,
 	Legend,
+	Select,
+	Textarea,
 } from "sashimi-ui/react";
 
 export default function FieldsetUsage() {
@@ -50,7 +50,7 @@ export default function FieldsetUsage() {
 			>
 				<Label htmlFor="neta">Neta</Label>
 				<Select
-					id="neta"
+					id={"neta"}
 					name="neta"
 					value={neta}
 					onChange={(e) => setNeta(e.target.value)}

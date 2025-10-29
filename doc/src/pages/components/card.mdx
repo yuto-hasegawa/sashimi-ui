@@ -8,7 +8,7 @@ import "./_card.css";
 
 # Card
 
-`.card` makes elements look like a card.
+`.card` makes elements **look like** a card.
 
 ## Applicable Elements
 
@@ -44,16 +44,18 @@ Elements get interactive when they are `a` or `button`.
   <p class="my-title">Anchor Card</p>
   <p class="my-body">This card is a HTML anchor element. Useful when listing tumbnails, for example.</p>
 </a>
+
 <button class="card">
   <p class="my-chip">&lt;button&gt;</p>
   <p class="my-title">Button Card</p>
   <p class="my-body">This card is a HTML button element. I don't know when to use, but it works.</p>
 </button>
+
 <div class="card">
   <p class="my-chip">&lt;div&gt;</p>
   <p class="my-title">Neutral Card</p>
-  <p class="my-body">This card is a HTML div element. Not only `div`
-    but also `nav` `section` and other container elements can be used.</p>
+  <p class="my-body">This card is a HTML div element. Not only <code>div</code>
+    but also <code>nav</code> <code>section</code> and other container elements can be used.</p>
 </div>
 ```
 
@@ -71,7 +73,7 @@ Feel free to write html and css as always.
 
 ```html
 <button class="card" style="padding:0; width:min-content;">
-  <img src={`${import.meta.env.BASE_URL}sashimi.jpg`} width="320" />
+  <img src="/sashimi.jpg" width="320" />
   <p style="padding:12px; margin:0;">Hello This is a button card with a large thumbnail.</p>
 </button>
 ```

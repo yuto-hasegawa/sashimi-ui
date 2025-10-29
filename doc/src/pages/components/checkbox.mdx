@@ -29,10 +29,12 @@ import SamplePane from "../../components/SamplePane.astro";
 
 ```html
 <label class="label"><input class="checkbox" type="checkbox" checked/>Do you want garlic added?</label>
+
 <div>
   <input class="checkbox" type="checkbox" id="wasabi" />
   <label class="label" for="wasabi">Can I add wasabi?</label>
 </div>
+
 <div>
   <label class="label" for="friday">Is it Friday today?</label>
   <input class="checkbox" type="checkbox" id="friday" />
@@ -52,10 +54,12 @@ import SamplePane from "../../components/SamplePane.astro";
   <input class="checkbox error" type="checkbox" />
   This is an error
 </label>
+
 <label class="label">
   <input class="checkbox" type="checkbox" disabled />
   This is disabled
 </label>
+
 <label class="label">
   <input class="checkbox" type="checkbox" checked disabled />
   Checked disabled
@@ -64,8 +68,8 @@ import SamplePane from "../../components/SamplePane.astro";
 
 ## React component
 
-React component `Input` is available.  
-It inherits the error property from a [`Fieldset`](/components/fieldset) component and automatically applies the error style.  
+React component `<Input/>` is available.  
+It inherits the error property from a <a href={`${import.meta.env.BASE_URL}components/fieldset/`}>`Fieldset`</a> component and automatically applies the error style.  
   
 ※ The disabled state is automatically inherited through the native HTML feature.
 
@@ -74,4 +78,4 @@ It inherits the error property from a [`Fieldset`](/components/fieldset) compone
 ### How to customize the bold line that appears when focused?
 
 You can set `outline` property in CSS.  
-Though it is recommended to leave it as default for accessibility.
+Though it is recommended to **leave it as default** for accessibility.

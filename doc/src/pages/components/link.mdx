@@ -7,7 +7,7 @@ import SamplePane from "../../components/SamplePane.astro";
 
 # Link
 
-`.link` makes elements look like a link.
+`.link` makes elements **look like** a link.
 
 ## Applicable Elements
 
@@ -25,7 +25,7 @@ import SamplePane from "../../components/SamplePane.astro";
 
 ```html
 <p>
-  Click the following link to navigate to <a class="link" href={`${import.meta.env.BASE_URL}`}>Introduction Page</a>.<br/>
+  Click the following link to navigate to <a class="link" href="/">Introduction Page</a>.<br/>
   And the next link is actually a button and <button class="link" onclick="alert('hello')">shows an alert</button> when clicked.
 </p>
 ```
@@ -58,6 +58,6 @@ import SamplePane from "../../components/SamplePane.astro";
 ```html
 <a class="link" href="https://github.com" target="_blank">
   GitHub.com
-  <svg class="icon"><use href={`${import.meta.env.BASE_URL}open_in_new.svg#root`} /></svg>
+  <svg class="icon"><use href="/open_in_new.svg#root" /></svg>
 </a>
 ```
